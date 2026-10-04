@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+web/dist/
+.DS_Store
+# Third-party task collections and graphics with unclear redistribution rights:
+# kept locally for reference, not committed.
+docs/sources/

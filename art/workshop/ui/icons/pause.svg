@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" data-theme="workshop">
+  <title>Pause</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g>
+    <rect x="7" y="5" width="6" height="22" rx="2" fill="#367FC1" data-fill-role="accent" />
+    <rect x="19" y="5" width="6" height="22" rx="2" fill="#367FC1" data-fill-role="accent" />
+  </g>
+</svg>

@@ -1,0 +1,860 @@
+{
+  "format": "tlfrobot-art/1",
+  "theme": "workshop",
+  "character": "Timo",
+  "revision": "1.0.0",
+  "design": "Original circular workshop caretaker; vector redraw, not a trace of the PNG concept sheets.",
+  "palette": {
+    "outline": "#21364B",
+    "body": "#F8F6EE",
+    "body-shade": "#CCDCE2",
+    "frame": "#537486",
+    "accent": "#367FC1",
+    "accent-light": "#A3DEE9",
+    "accent-pale": "#E3F3F6",
+    "paint": "#F2B24F",
+    "paint-light": "#F7D894",
+    "paint-shade": "#BE833A",
+    "screen": "#21364B",
+    "eye": "#B8EEF2",
+    "white": "#FFFFFF",
+    "quiet": "#DFE8EC",
+    "muted": "#7E94A2",
+    "positive": "#38846E",
+    "positive-light": "#D4EEE2",
+    "negative": "#667C91",
+    "negative-light": "#E6EDF3",
+    "error": "#C1664F",
+    "error-light": "#F9E4D5",
+    "crystal": "#41A9D1",
+    "crystal-light": "#B9EEF2",
+    "crystal-shade": "#3476B8"
+  },
+  "coordinate_convention": "SVG: x right, y down; north is negative y; clockwise positive degrees.",
+  "assets": [
+    {
+      "id": "A01",
+      "path": "robot/robot.svg",
+      "title": "Timo robot",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "shadow",
+        "drive",
+        "drive-pod-0",
+        "drive-pod-1",
+        "drive-pod-2",
+        "drive-pod-3",
+        "body",
+        "eyes",
+        "eye-left",
+        "eye-right",
+        "eyelids",
+        "cargo-hatch",
+        "heading",
+        "sensor",
+        "gripper-base",
+        "gripper-left",
+        "gripper-right",
+        "roller",
+        "eraser"
+      ],
+      "anchors": {
+        "pivot": [
+          64,
+          64
+        ],
+        "cargo": [
+          64,
+          92
+        ],
+        "probe_origin": [
+          64,
+          26
+        ],
+        "sensor_pivot": [
+          64,
+          64
+        ],
+        "tool_mount": [
+          91,
+          83
+        ],
+        "grip_contact": [
+          109,
+          107
+        ],
+        "paint_contact": [
+          107,
+          106
+        ],
+        "erase_contact": [
+          109,
+          106
+        ],
+        "cell_object": [
+          111,
+          109
+        ],
+        "badge_region": [
+          99,
+          115,
+          27,
+          12
+        ]
+      }
+    },
+    {
+      "id": "A02",
+      "path": "world/crystal.svg",
+      "title": "Crystal",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "crystal"
+      ],
+      "anchors": {
+        "centre": [
+          32,
+          32
+        ],
+        "grip": [
+          32,
+          16
+        ]
+      }
+    },
+    {
+      "id": "A03",
+      "path": "world/paint.svg",
+      "title": "Paint layer",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "paint"
+      ],
+      "anchors": {
+        "tile": [
+          0,
+          0,
+          128,
+          128
+        ]
+      }
+    },
+    {
+      "id": "A04",
+      "path": "world/wall.svg",
+      "title": "Wall segment",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        24.0
+      ],
+      "parts": [
+        "wall-middle",
+        "wall-detail"
+      ],
+      "anchors": {
+        "start": [
+          0,
+          12
+        ],
+        "end": [
+          128,
+          12
+        ],
+        "middle": [
+          16,
+          5,
+          96,
+          14
+        ]
+      }
+    },
+    {
+      "id": "A05",
+      "path": "world/wall-joint.svg",
+      "title": "Wall joint",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        24.0,
+        24.0
+      ],
+      "parts": [
+        "joint"
+      ],
+      "anchors": {
+        "pivot": [
+          12,
+          12
+        ]
+      }
+    },
+    {
+      "id": "A06",
+      "path": "world/marker-start.svg",
+      "title": "Start marker",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "marker"
+      ],
+      "anchors": {
+        "pivot": [
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "id": "A07",
+      "path": "world/marker-finish.svg",
+      "title": "Finish marker",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "marker"
+      ],
+      "anchors": {
+        "pivot": [
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "id": "A08",
+      "path": "world/marker-target.svg",
+      "title": "Target marker",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "marker"
+      ],
+      "anchors": {
+        "pivot": [
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "id": "A09",
+      "path": "hud/bag.svg",
+      "title": "Cargo bag",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "bag-base",
+        "bag-contents",
+        "bag-lid",
+        "bag-indicator"
+      ],
+      "anchors": {
+        "lid_pivot": [
+          32,
+          18
+        ],
+        "contents": [
+          32,
+          23
+        ],
+        "label": [
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "A10",
+      "path": "hud/compass.svg",
+      "title": "Compass",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "compass-frame",
+        "compass-pointer"
+      ],
+      "anchors": {
+        "pivot": [
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "A11",
+      "path": "hints/direction-arrow.svg",
+      "title": "Direction arrow",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "arrow"
+      ],
+      "anchors": {
+        "pivot": [
+          32,
+          32
+        ],
+        "tail": [
+          32,
+          55
+        ],
+        "tip": [
+          32,
+          7
+        ]
+      }
+    },
+    {
+      "id": "A12",
+      "path": "hints/sensor-pulse.svg",
+      "title": "Sensor pulse",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "pulse"
+      ],
+      "anchors": {
+        "origin": [
+          32,
+          54
+        ],
+        "target": [
+          32,
+          5
+        ]
+      }
+    },
+    {
+      "id": "A13",
+      "path": "hints/focus-ring.svg",
+      "title": "Focus ring",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        128.0
+      ],
+      "parts": [
+        "focus"
+      ],
+      "anchors": {
+        "pivot": [
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "id": "A14",
+      "path": "status/boolean-true.svg",
+      "title": "Boolean True",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "badge",
+        "glyph"
+      ],
+      "anchors": {}
+    },
+    {
+      "id": "A15",
+      "path": "status/boolean-false.svg",
+      "title": "Boolean False",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "badge",
+        "glyph"
+      ],
+      "anchors": {}
+    },
+    {
+      "id": "A16",
+      "path": "status/error.svg",
+      "title": "Error",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "badge",
+        "glyph"
+      ],
+      "anchors": {}
+    },
+    {
+      "id": "A17",
+      "path": "status/completed.svg",
+      "title": "Program completed",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "badge",
+        "glyph"
+      ],
+      "anchors": {}
+    },
+    {
+      "id": "A18",
+      "path": "status/success.svg",
+      "title": "Verified success",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "badge",
+        "glyph"
+      ],
+      "anchors": {}
+    },
+    {
+      "id": "A19",
+      "path": "input/keyboard.svg",
+      "title": "Keyboard input",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "keyboard"
+      ],
+      "anchors": {
+        "label_region": [
+          14,
+          22,
+          35,
+          14
+        ]
+      }
+    },
+    {
+      "id": "A20",
+      "path": "input/pointer.svg",
+      "title": "Pointer input",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "pointer",
+        "click-rays"
+      ],
+      "anchors": {
+        "tip": [
+          22,
+          18
+        ]
+      }
+    },
+    {
+      "id": "A21",
+      "path": "input/clock.svg",
+      "title": "Timed wait",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "clock-frame",
+        "clock-hand",
+        "clock-hour"
+      ],
+      "anchors": {
+        "pivot": [
+          32,
+          34
+        ]
+      }
+    },
+    {
+      "id": "A22",
+      "path": "ui/controls.svg",
+      "title": "Interface controls",
+      "scope": "R1",
+      "viewBox": [
+        0.0,
+        0.0,
+        256.0,
+        192.0
+      ],
+      "parts": [],
+      "anchors": {
+        "symbol_viewBox": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "derived-play",
+      "path": "ui/icons/play.svg",
+      "title": "play",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-pause",
+      "path": "ui/icons/pause.svg",
+      "title": "pause",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-stop",
+      "path": "ui/icons/stop.svg",
+      "title": "stop",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-step",
+      "path": "ui/icons/step.svg",
+      "title": "step",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-reset",
+      "path": "ui/icons/reset.svg",
+      "title": "reset",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-history-back",
+      "path": "ui/icons/history-back.svg",
+      "title": "history-back",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-history-forward",
+      "path": "ui/icons/history-forward.svg",
+      "title": "history-forward",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-speed",
+      "path": "ui/icons/speed.svg",
+      "title": "speed",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-zoom-in",
+      "path": "ui/icons/zoom-in.svg",
+      "title": "zoom-in",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-zoom-out",
+      "path": "ui/icons/zoom-out.svg",
+      "title": "zoom-out",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-fit",
+      "path": "ui/icons/fit.svg",
+      "title": "fit",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "derived-settings",
+      "path": "ui/icons/settings.svg",
+      "title": "settings",
+      "scope": "derived-control",
+      "viewBox": [
+        0.0,
+        0.0,
+        32.0,
+        32.0
+      ],
+      "parts": [],
+      "anchors": {}
+    },
+    {
+      "id": "X01",
+      "path": "reserve/gate.svg",
+      "title": "Sliding gate",
+      "scope": "art-reserve",
+      "viewBox": [
+        0.0,
+        0.0,
+        128.0,
+        64.0
+      ],
+      "parts": [
+        "gate-frame",
+        "gate-panel"
+      ],
+      "anchors": {
+        "slide_open": [
+          -89,
+          0
+        ],
+        "edge_start": [
+          11,
+          32
+        ],
+        "edge_end": [
+          117,
+          32
+        ]
+      }
+    },
+    {
+      "id": "X02",
+      "path": "reserve/switch.svg",
+      "title": "Push button",
+      "scope": "art-reserve",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "switch-base",
+        "switch-cap"
+      ],
+      "anchors": {
+        "press_translation": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "id": "X03",
+      "path": "reserve/lamp.svg",
+      "title": "Signal lamp",
+      "scope": "art-reserve",
+      "viewBox": [
+        0.0,
+        0.0,
+        64.0,
+        64.0
+      ],
+      "parts": [
+        "lamp-frame",
+        "lamp-off",
+        "lamp-on"
+      ],
+      "anchors": {
+        "pivot": [
+          32,
+          29
+        ]
+      }
+    }
+  ],
+  "required_count": 22,
+  "reserve_count": 3,
+  "robot": {
+    "path": "robot/robot.svg",
+    "pivot": [
+      64,
+      64
+    ],
+    "canonical_heading": "north",
+    "default_hidden": [
+      "gripper-base",
+      "gripper-left",
+      "gripper-right",
+      "roller",
+      "eraser",
+      "eyelids"
+    ],
+    "upright_parts": [
+      "eyes",
+      "eyelids",
+      "cargo-hatch"
+    ],
+    "heading_parts": [
+      "drive",
+      "body",
+      "heading"
+    ],
+    "sensor_independent": true,
+    "safe_badge_region": [
+      99,
+      115,
+      27,
+      12
+    ]
+  },
+  "recolour": "Use data-fill-role and data-stroke-role attributes. SVG masters contain concrete palette colours for portability.",
+  "mounting": "Namespace every id and local href/url reference on insertion. data-part values stay logical and are scoped to the instance."
+}

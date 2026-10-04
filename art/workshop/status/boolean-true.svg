@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Boolean True — not a task verdict</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="badge" data-part="badge">
+    <circle cx="32" cy="32" r="24" fill="#D4EEE2" data-fill-role="positive-light" stroke="#38846E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="positive" />
+  </g>
+  <g id="glyph" data-part="glyph">
+    <path d="M 19 32 L 28 41 L 45 23" fill="none" stroke="#38846E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="positive" />
+  </g>
+</svg>

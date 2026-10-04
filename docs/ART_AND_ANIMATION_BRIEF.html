@@ -1,0 +1,332 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TLF Robot · Art &amp; Animation</title><style>
+:root{--ink:#16283c;--muted:#597083;--accent:#075e67;--line:#d9e3e8;--paper:#fff;--bg:#f3f6f8}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth;scroll-padding-top:26px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.66 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.top{background:#142b40;color:white;padding:30px 4vw 26px}.top .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;opacity:.7}.top h1{margin:6px 0 10px;font-size:clamp(24px,3.8vw,40px);line-height:1.17;max-width:1000px}.top p{margin:0;color:#cedce6;max-width:1000px}
+.layout{display:grid;grid-template-columns:278px minmax(0,1fr);max-width:1510px;margin:0 auto;gap:24px;padding:24px}.toc{align-self:start;position:sticky;top:20px;max-height:calc(100vh - 40px);overflow:auto;background:white;border:1px solid var(--line);border-radius:12px;padding:18px 16px;font-size:13px;line-height:1.4}.toc strong{display:block;margin-bottom:12px;font-size:14px}.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0}.toc a:hover{color:var(--accent)}.toc a.sub{padding-left:11px;font-size:12px}.toc input{width:100%;font:inherit;margin-bottom:12px;padding:8px;border:1px solid var(--line);border-radius:6px}
+main{background:white;border:1px solid var(--line);border-radius:12px;padding:34px 42px;min-width:0}main>h1{display:none}h2{font-size:26px;line-height:1.25;margin:50px 0 18px;padding-top:20px;border-top:2px solid var(--line);color:#173e53}h3{font-size:20px;line-height:1.3;margin:30px 0 12px;color:#075e67}h4{font-size:17px}p{margin:12px 0}a{overflow-wrap:anywhere;color:#086377;text-decoration:underline;text-underline-offset:3px}strong{font-weight:670}code{font: .91em/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf3f6;border-radius:4px;padding:1px 4px;overflow-wrap:anywhere}pre{background:#122b3b;color:#eef7fc;padding:20px;border-radius:9px;overflow-x:auto;font-size:14px;line-height:1.5}pre code{background:none;padding:0;white-space:pre;overflow-wrap:normal;color:inherit}blockquote{border-left:4px solid var(--accent);padding:8px 20px;margin:22px 0;background:#f0f8f8}.table-scroll{overflow:auto;margin:20px 0;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.5}th{text-align:left;background:#eaf1f5;padding:12px 13px;font-weight:650;vertical-align:top}td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}td:first-child{min-width:150px}tbody tr:nth-child(even){background:#fafcfd}table code{font-size:12px}ul,ol{padding-left:25px}.footer{padding:30px;color:var(--muted);font-size:13px;text-align:center}.print{border:1px solid #7394a7;background:transparent;color:white;border-radius:6px;padding:7px 12px;float:right;cursor:pointer}
+@media(max-width:1050px){.layout{grid-template-columns:1fr;padding:14px}.toc{position:static;max-height:260px}main{padding:22px}.top{padding:22px}h2{font-size:23px}}
+@media print{body{background:white;font-size:10pt}.top{background:white;color:black;padding:0 0 12px}.top p{color:#333}.layout{display:block;padding:0}.toc,.print,.footer{display:none}main{border:0;padding:0}h2{break-after:avoid}h3,th{break-after:avoid}pre{white-space:pre-wrap;background:#f4f4f4;color:black;overflow:visible}pre code{white-space:pre-wrap}tr{break-inside:avoid}a{color:black}.table-scroll{overflow:visible}td,th{padding:6px}.top h1{font-size:22pt}}
+</style></head><body><header class="top"><button class="print" onclick="window.print()">Print</button><div class="eyebrow">TLF / Engineering specification / 04 October 2026</div><h1>TLF Robot · Art &amp; Animation</h1><p>Separate production brief · 22 required SVG source files, 3 optional reserve props and 20 reusable templates</p></header><div class="layout"><nav class="toc"><strong>Contents</strong><input type="search" id="nav-search" aria-label="Filter section titles" placeholder="Filter section titles"><a class="" href="#1-design-goal">1. Design goal</a><a class="" href="#2-one-character-not-two">2. One character, not two</a><a class="" href="#3-complete-source-svg-inventory">3. Complete source SVG inventory</a><a class="sub" href="#optional-low-cost-reserve">Optional low-cost reserve</a><a class="sub" href="#things-that-do-not-need-additional-pictures">Things that do not need additional pictures</a><a class="" href="#4-robot-anatomy-and-geometry">4. Robot anatomy and geometry</a><a class="" href="#5-source-file-rules">5. Source file rules</a><a class="" href="#6-animation-format-and-ownership">6. Animation format and ownership</a><a class="" href="#7-complete-template-inventory">7. Complete template inventory</a><a class="" href="#8-essential-clip-direction">8. Essential clip direction</a><a class="sub" href="#movement-and-turning">Movement and turning</a><a class="sub" href="#crystal-transfer">Crystal transfer</a><a class="sub" href="#paint-and-eraser">Paint and eraser</a><a class="sub" href="#sensing">Sensing</a><a class="sub" href="#errors">Errors</a><a class="sub" href="#input-pause-and-lifecycle">Input, pause and lifecycle</a><a class="" href="#9-web-and-desktop-exports">9. Web and desktop exports</a><a class="" href="#10-preview-gallery-and-acceptance">10. Preview gallery and acceptance</a></nav><main><h1>TLF Robot — Original Art and Animation Brief</h1>
+<p><strong>Release:</strong> R1 · <strong>Revision:</strong> 0.2 · <strong>Date:</strong> 4 October 2026<br/>
+<strong>Scope:</strong> one original character, two movement policies, crystals, paint, sensing, input and clear error feedback.</p>
+<p>This is the separate production brief for the graphics team. The full development requirements remain authoritative for runtime and map semantics. <strong>The SVG illustrations, clip data and desktop exports described below will be created and delivered separately. This documentation bundle does not contain finished robot artwork or animation files.</strong></p>
+<h2 id="1-design-goal">1. Design goal</h2>
+<p>Create a small, friendly, competent maintenance robot working in a modular workshop. It moves crystalline components, marks tiles with paint and navigates partitions. The story gives purpose to existing actions without inventing fuel, health, gravity or combat. The working visual theme ID is <code>workshop</code>; the character's final name and palette are still design decisions, not borrowed branding.</p>
+<p>The character must be original. Do not trace, recolour, collage or reuse the old Karel, robotzero or textbook assets. Reuse the idea of an expressive probe or short movement, not the old silhouette, face, palette or path geometry. Keep provenance for sketches, masters and exports. Visual approval is required before production packaging.</p>
+<p>Use a predominantly top-down view. A slightly decorative surface treatment is acceptable, but fixed isometric projections, directional lighting and baked-in text make rotation unnecessarily difficult. Aim for readable shapes at 32–128 pixel cell sizes. The robot should be recognisable and its current cell obvious, not an elaborate cartoon that conceals the algorithm.</p>
+<h2 id="2-one-character-not-two">2. One character, not two</h2>
+<p>The same robot serves both policies. In relative mode a conspicuous heading pointer defines forward. The body and pointer can rotate on a quarter-turn command. In absolute mode the pointer is absent and the body must not imply a hidden forward direction; a short temporary arrow communicates each movement direction.</p>
+<p>Do not draw four direction-specific bodies. Do not invent two species or different toolkits. A circular/rounded chassis, omnidirectional drive, cargo hatch and independent tool/probe parts are preferable. A very directional front bumper or face that stays visibly pointed north is unsuitable for the absolute presentation.</p>
+<p>The renderer has separate world translation, heading rotation and local tool groups. Text and HUD labels remain upright. The absolute policy is a presentation configuration of one master, not another character design.</p>
+<h2 id="3-complete-source-svg-inventory">3. Complete source SVG inventory</h2>
+<p>There are <strong>22 required SVG source files</strong>. This includes one robot master with named parts and one controls sheet with twelve symbols. It does not mean twenty-two full-character illustrations.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>ID / file</th>
+<th>Purpose</th>
+<th>Required drawing and reuse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A01</strong> <code>robot/robot.svg</code></td>
+<td>Robot master</td>
+<td>One original top-down robot with a neutral body, separately addressable heading pointer, drive ring, sensor, gripper, roller, eraser, cargo hatch, eyes and eyelids. All tools are parts of this one master, not different characters. Transform named groups; omit heading pointer in absolute mode; no four-direction files.</td>
+</tr>
+<tr>
+<td><strong>A02</strong> <code>world/crystal.svg</code></td>
+<td>Crystal</td>
+<td>One original, unmistakably crystalline collectible; legible at small size, with no number embedded. The same symbol serves a pile, a carried crystal, a toolbar and inventory.</td>
+</tr>
+<tr>
+<td><strong>A03</strong> <code>world/paint.svg</code></td>
+<td>Paint patch</td>
+<td>A full-cell coating with restrained texture; separate from targets and the floor. Reveal or remove through a rectangular clip; recolour through theme tokens.</td>
+</tr>
+<tr>
+<td><strong>A04</strong> <code>world/wall.svg</code></td>
+<td>Wall segment</td>
+<td>A straight horizontal one-cell barrier centred on an edge, with a repeatable middle and explicit end anchors. Rotate for vertical walls; repeat the middle, do not distort decorative ends.</td>
+</tr>
+<tr>
+<td><strong>A05</strong> <code>world/wall-joint.svg</code></td>
+<td>Wall joint</td>
+<td>A small neutral connector hiding seams at corners, T-junctions and crossings. One rotationally symmetric symbol; actual wall topology remains engine data.</td>
+</tr>
+<tr>
+<td><strong>A06</strong> <code>world/marker-start.svg</code></td>
+<td>Start marker</td>
+<td>Thin origin marker that remains visible under paint and a robot. Static annotation, never a sensor or checkpoint trigger.</td>
+</tr>
+<tr>
+<td><strong>A07</strong> <code>world/marker-finish.svg</code></td>
+<td>Finish marker</td>
+<td>Distinct docking outline, not a paint-coloured tile or automatic exit. May coexist with start and target; reaching it does not terminate execution.</td>
+</tr>
+<tr>
+<td><strong>A08</strong> <code>world/marker-target.svg</code></td>
+<td>Target marker</td>
+<td>Corner brackets or a dashed outline marking cells mentioned in the task. Never interpreted as paint; target quantities use live text.</td>
+</tr>
+<tr>
+<td><strong>A09</strong> <code>hud/bag.svg</code></td>
+<td>Bag indicator</td>
+<td>A cargo-container icon with separately addressable lid and contents indicator. Empty, nonempty and infinite variants use the same geometry and live text.</td>
+</tr>
+<tr>
+<td><strong>A10</strong> <code>hud/compass.svg</code></td>
+<td>Compass indicator</td>
+<td>Four cardinal ticks and a movable requested-direction indicator. No embedded letters. Renderer adds localised labels and rotates only the pointer.</td>
+</tr>
+<tr>
+<td><strong>A11</strong> <code>hints/direction-arrow.svg</code></td>
+<td>Direction arrow</td>
+<td>A short straight arrow drawn in one canonical direction. Rotate for four directions; show in absolute movement without creating heading.</td>
+</tr>
+<tr>
+<td><strong>A12</strong> <code>hints/sensor-pulse.svg</code></td>
+<td>Sensor pulse</td>
+<td>A small probe/ray segment with origin and target anchors; not a long-range radar scan. Rotate and scale its length to the adjacent edge or current-cell object.</td>
+</tr>
+<tr>
+<td><strong>A13</strong> <code>hints/focus-ring.svg</code></td>
+<td>Focus ring</td>
+<td>An open outline that can surround a cell, object, inventory icon or selected location. Translate, scale and fade; colour is supplementary, not the only signal.</td>
+</tr>
+<tr>
+<td><strong>A14</strong> <code>status/boolean-true.svg</code></td>
+<td>True symbol</td>
+<td>A clear positive boolean symbol without baked-in text. Always pair with the actual Python text True; not a task-success trophy.</td>
+</tr>
+<tr>
+<td><strong>A15</strong> <code>status/boolean-false.svg</code></td>
+<td>False symbol</td>
+<td>A clear negative boolean symbol, visually distinct from a fatal error. Always pair with False; an ordinary false sensor is not an accident.</td>
+</tr>
+<tr>
+<td><strong>A16</strong> <code>status/error.svg</code></td>
+<td>Error symbol</td>
+<td>A calm warning indicator, distinguishable by shape from the boolean symbols. Shared across error categories; category and explanation are live text.</td>
+</tr>
+<tr>
+<td><strong>A17</strong> <code>status/completed.svg</code></td>
+<td>Program completed symbol</td>
+<td>A neutral completion indicator. Must not imply that a task was solved.</td>
+</tr>
+<tr>
+<td><strong>A18</strong> <code>status/success.svg</code></td>
+<td>Verified success symbol</td>
+<td>A modest original seal used only after a checker accepts the result. A brief reveal is enough; no obligatory confetti.</td>
+</tr>
+<tr>
+<td><strong>A19</strong> <code>input/keyboard.svg</code></td>
+<td>Keyboard input symbol</td>
+<td>A key-cap outline or small keyboard cue, with an empty label area. Actual key names are live localised text.</td>
+</tr>
+<tr>
+<td><strong>A20</strong> <code>input/pointer.svg</code></td>
+<td>Pointer input symbol</td>
+<td>A mouse/touch-compatible click cue. Translate to the selected cell; support keyboard activation of the same control.</td>
+</tr>
+<tr>
+<td><strong>A21</strong> <code>input/clock.svg</code></td>
+<td>Timed wait symbol</td>
+<td>Clock outline with separately addressable hand. Progress comes from the runtime wait, never an independent looping timer.</td>
+</tr>
+<tr>
+<td><strong>A22</strong> <code>ui/controls.svg</code></td>
+<td>Control icon sheet</td>
+<td>Symbols: play, pause, stop, step, reset, history-back, history-forward, speed, zoom-in, zoom-out, fit, settings. One sheet with 12 named symbols; labels and keyboard shortcuts are HTML/native UI text.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="optional-low-cost-reserve">Optional low-cost reserve</h3>
+<p>These three extra masters can be designed at the same time but are not functional R1 world elements. A closed/open gate is a sliding panel; a push button is a cap moving over a base; a signal lamp changes its lens state. Do not implement associated rules on the basis of artwork alone.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>ID / file</th>
+<th>Purpose</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>X01</strong> <code>reserve/gate.svg</code></td>
+<td>Sliding gate</td>
+<td>Frame and sliding panel in separate groups; shown open/closed by translation. Rotate one horizontal master; no gate physics is promised in R1.</td>
+</tr>
+<tr>
+<td><strong>X02</strong> <code>reserve/switch.svg</code></td>
+<td>Push button</td>
+<td>Base and cap in separate groups; pressed state by short translation. Mouse, touch and keyboard can later share the same semantic activation.</td>
+</tr>
+<tr>
+<td><strong>X03</strong> <code>reserve/lamp.svg</code></td>
+<td>Signal lamp</td>
+<td>Outline and inner lens; off/on states differ in shape/detail as well as colour. Opacity/state replacement; no illumination shader.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="things-that-do-not-need-additional-pictures">Things that do not need additional pictures</h3>
+<p>The developer generates the grid, blank floor, world-sized backgrounds, coordinate labels, numbers, True/False/None text, quantity badge backgrounds, direction/turn arcs, selection rectangles, paint-reveal clips and camera transforms. One crystal with a numeric badge is sufficient for every finite quantity. The bag displays a live ∞ label when appropriate. These are not invitations to bake numbers or words into SVG paths.</p>
+<h2 id="4-robot-anatomy-and-geometry">4. Robot anatomy and geometry</h2>
+<p>Use <code>viewBox="0 0 128 128"</code>. Rotation pivot: <code>(64,64)</code>. Canonical relative heading: north, toward negative local y. Keep the neutral body approximately within radius 42 around the pivot, with space around it for wall edges, current-cell objects and badges. Fine decoration must not make the heading pointer or tools unreadable.</p>
+<p>Required logical part names: <code>body</code>, <code>drive</code>, <code>heading</code>, <code>sensor</code>, <code>gripper-base</code>, <code>gripper-left</code>, <code>gripper-right</code>, <code>roller</code>, <code>eraser</code>, <code>cargo-hatch</code>, <code>eyes</code>, <code>eyelids</code>, <code>shadow</code>. They can be SVG groups or exported symbols. A fixed alternate pose selected by visibility is permitted for a shape that cannot be moved rigidly; do not introduce a full deformation rig for a tiny visual difference.</p>
+<p>The artist supplies exact numeric anchors for pivot, cargo, probe origin, tool mount, grip contact, paint contact and erase contact. The developer supplies current-cell object and adjacent-edge target anchors in world space. The manifest also declares a safe badge region. After these anchors are agreed, runtime code must not infer them by measuring random SVG paths.</p>
+<p>Tools act on the current cell. A side sensor reaches the immediately adjacent edge. The gripper must not appear to take a crystal from the cell ahead. Paint stays within the current tile, and the robot does not shift logically just because its roller extends. The shadow must work with rotations and with absolute translation, rather than implying a moving light source.</p>
+<h2 id="5-source-file-rules">5. Source file rules</h2>
+<p>Use simple paths/shapes, groups, fill/stroke, opacity and transforms. Transparent background and declared viewBox are required. All geometry must be bounded and every named part must survive the export process.</p>
+<p>No embedded raster image, SVG script, event handler, external asset, external font, <code>foreignObject</code>, imported stylesheet or filter-dependent essential effect. Avoid costly blur/glow. Prefer layered solid shapes for depth. Do not deliver a PNG hidden inside an SVG wrapper. The build checks file contents, not only extension.</p>
+<p>Every human-language string is live text generated by the application. Do not convert numbers, keyboard labels, compass letters or Python values to outlines. Use theme-role names for paint, frame, body, outline, accent and status colours; the approved palette is a separate design decision. A state must remain distinguishable without its colour.</p>
+<p>Multiple running examples can share a page, so logical part names will be namespaced on mounting. No asset may rely on a global DOM ID outside its own manifest. Relative local references must remain correct after namespacing.</p>
+<h2 id="6-animation-format-and-ownership">6. Animation format and ownership</h2>
+<p>The runtime representation is <strong>SVG parts + parameterised clip data</strong>. The developer provides a small evaluator; the artist provides reviewed tracks and phases. Every clip can be paused, resumed, accelerated, cancelled or sampled at any progress. A free-running animated SVG, GIF, Lottie file or video is not the master format.</p>
+<p>Basic operations: translate, rotate about a pivot, scale, change opacity, toggle visibility, reveal/wipe a rectangle and move along a short anchor-based polyline. Use the shared linear/ease-in/ease-out/ease-in-out curves. For numerals and status text, emit a named display cue, not an embedded text animation. Do not require arbitrary SVG path morphing, spring physics, shaders or a script in an art file.</p>
+<p>A static sprite that translates can be a good movement animation. A probe that rotates and extends can be a good sensing animation. A small reveal is sufficient for a paint sweep. Spend effort on the clarity of source, target and outcome, not on animation complexity.</p>
+<p>The template declares assets, parameters, normalised tracks, duration policy, display cues, transient nodes, reduced-motion behaviour and cleanup. The manifest binds logical node names and anchors. Animation code must never decide how many crystals exist or whether an edge is blocked.</p>
+<h2 id="7-complete-template-inventory">7. Complete template inventory</h2>
+<p>There are <strong>20 reusable runtime templates</strong>. Outcomes such as True/False, finite/infinite bag or north/south are variants of these templates, not independent hand-drawn movies.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>ID / template</th>
+<th>Trigger and parameters</th>
+<th>Visual contract / duration at 1×</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C01</strong> <code>move.step</code></td>
+<td>move / north / south / east / west. Parameters: direction, movement policy, start/end anchors.</td>
+<td>Translate actor root between adjacent cell centres; optional drive-ring motion; absolute mode shows a short direction arrow. No change of heading during a step. Duration: 350 ms.</td>
+</tr>
+<tr>
+<td><strong>C02</strong> <code>turn</code></td>
+<td>turn_left / turn_right / turn_around. Parameters: signed angle, initial heading.</td>
+<td>Rotate heading group by signed -90, +90 or +180 degrees; draw a short procedural arc. Never substitute +270 for -90; quarter turns use 220 ms, half turns 360 ms. Duration: 220 / 360 ms.</td>
+</tr>
+<tr>
+<td><strong>C03</strong> <code>crystal.transfer</code></td>
+<td>take / put. Parameters: take/put, before counts, finite/infinite bag.</td>
+<td>Deploy gripper, move one crystal between current-cell object anchor and cargo anchor, settle, retract. No teleport from a neighbouring cell; visual accounting includes one in-transit crystal. Duration: 420 ms.</td>
+</tr>
+<tr>
+<td><strong>C04</strong> <code>paint.apply</code></td>
+<td>paint. Parameters: fresh/repeated, theme.</td>
+<td>Deploy roller and reveal the current-cell paint layer with a rectangular sweep; already-painted cells get a shorter visible pass. Repeated paint does not darken or accumulate layers. Duration: 450 / 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C05</strong> <code>paint.erase</code></td>
+<td>erase. Parameters: painted/clean.</td>
+<td>Deploy eraser and wipe only the paint layer; clean cells get a short acknowledgement. Crystals, targets, walls and visit history are untouched. Duration: 350 / 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C06</strong> <code>sense.edge</code></td>
+<td>all eight *_clear sensors. Parameters: world direction, clear/blocked, observed edge.</td>
+<td>Point the independent probe at the requested adjacent edge and show the sampled True or False. A blocked probe is not a collision; do not turn the body or scan beyond one edge. Duration: 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C07</strong> <code>sense.cell</code></td>
+<td>on_crystal / painted / crystal_count. Parameters: crystal/paint/count, result, target anchor.</td>
+<td>Focus the relevant current-cell layer or its empty location; display the exact sampled value. Absence is visible; no synthetic object is added to the world. Duration: 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C08</strong> <code>sense.bag</code></td>
+<td>bag_empty / bag_count. Parameters: boolean/count, empty/nonempty/infinite.</td>
+<td>Focus the cargo indicator and reveal its sampled value. An empty bag yields True for bag_empty; an infinite bag_count yields None, not Infinity. Duration: 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C09</strong> <code>sense.heading</code></td>
+<td>four facing_* sensors. Parameters: requested direction, actual heading, result.</td>
+<td>Compare compass query with actor heading and show the sampled boolean. Do not rotate the logical actor while checking. Duration: 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C10</strong> <code>error.wall</code></td>
+<td>illegal step. Parameters: attempted direction, edge.</td>
+<td>Nudge toward the attempted edge without crossing it; return to the original centre; highlight the obstacle. No state mutation or successful movement flash. Duration: 280 ms.</td>
+</tr>
+<tr>
+<td><strong>C11</strong> <code>error.object</code></td>
+<td>NO_CRYSTAL / EMPTY_BAG. Parameters: cell/bag.</td>
+<td>A short unsuccessful reach toward the empty cell or inventory, then return to idle. No crystal may appear even transiently as a successful transfer. Duration: 240 ms.</td>
+</tr>
+<tr>
+<td><strong>C12</strong> <code>error.status</code></td>
+<td>unavailable command / limits / Python / transport / invalid map. Parameters: error category, source range, details.</td>
+<td>Show an error indicator and the correct source/field diagnostic. No fake movement; invalid maps can be reported without drawing a world. Duration: 160 ms.</td>
+</tr>
+<tr>
+<td><strong>C13</strong> <code>input.waiting</code></td>
+<td>wait_key / wait_click / wait. Parameters: key/click/time.</td>
+<td>Show the corresponding input cue; for a timed wait reflect runtime progress. The cue does not settle the request; only input, timer completion or cancellation does. Duration: controlled by the pending request.</td>
+</tr>
+<tr>
+<td><strong>C14</strong> <code>input.received</code></td>
+<td>accepted key or cell click. Parameters: key/click and sampled value.</td>
+<td>Flash the consumed key or focus the selected cell before returning the value. Do not consume one physical input twice; do not highlight a new cursor position instead of the sampled cell. Duration: 120 ms.</td>
+</tr>
+<tr>
+<td><strong>C15</strong> <code>lifecycle</code></td>
+<td>ready / completed / cancelled. Parameters: ready/completed/cancelled.</td>
+<td>A modest state change and matching status cue. Completed is neutral; Stop does not celebrate success. Duration: 160 ms.</td>
+</tr>
+<tr>
+<td><strong>C16</strong> <code>verdict</code></td>
+<td>checker pass / checker failure. Parameters: accepted/rejected, differences.</td>
+<td>Reveal success seal or focus concrete mismatching cells/edges. Only trusted/publicly configured checking triggers a success indication. Duration: 360 ms.</td>
+</tr>
+<tr>
+<td><strong>C17</strong> <code>view.reset</code></td>
+<td>reset or load another map. Parameters: old/new snapshot.</td>
+<td>Replace with the authoritative initial snapshot through a brief crossfade. Not reverse execution and not a sequence of robot commands. Duration: 120 ms.</td>
+</tr>
+<tr>
+<td><strong>C18</strong> <code>view.camera</code></td>
+<td>follow / pan / zoom / fit. Parameters: viewport, target transform.</td>
+<td>Interpolate the view transform with actor/world geometry unchanged. Camera animation does not affect sensor results or create world boundaries. Duration: 180 ms.</td>
+</tr>
+<tr>
+<td><strong>C19</strong> <code>focus.feedback</code></td>
+<td>source/value focus, counters, editor confirmation. Parameters: target, label, old/new value.</td>
+<td>Brief outline or opacity change on an existing target; numeric text updates at the owning clip cue. This is a helper track, not another command or an independent completion barrier. Duration: 120 ms.</td>
+</tr>
+<tr>
+<td><strong>C20</strong> <code>idle.blink</code></td>
+<td>optional idle expression. Parameters: eye state.</td>
+<td>Close and reopen eyelids with a tiny scale/visibility change. Ambient only, off when paused/hidden/reduced-motion; never delays Python. Duration: 120 ms.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="8-essential-clip-direction">8. Essential clip direction</h2>
+<h3 id="movement-and-turning">Movement and turning</h3>
+<p>For a step, ease between adjacent cell centres over roughly 350 ms at normal speed. A tiny drive-ring movement is enough; there is no requirement for a walk cycle. The final centre must be exact. Do not rotate heading during movement. In absolute mode a temporary arrow indicates the direction and disappears afterwards.</p>
+<p>For turns, rotate about the agreed centre: left −90°, right +90°, around +180° in SVG-clockwise convention. Quarter turns take roughly 220 ms and a half-turn 360 ms. The left turn must not spin right for 270°. A procedural arc can explain the direction; no extra turn illustration is needed.</p>
+<h3 id="crystal-transfer">Crystal transfer</h3>
+<p>Proposed phases: reach 0–25%, pickup/transfer 25–70%, deposit 70–85%, retract 85–100%. Source and destination anchors are inside the current cell and at the robot's cargo hatch. A separate HUD pulse can acknowledge the inventory change; do not send the crystal on a long trip across the screen.</p>
+<p>At pickup show one transient carried crystal. The visible pile decreases by one, then the destination increases at deposit. During transfer the visible accounting includes the carried object. With a finite bag, never briefly show two successfully transferred crystals. With an infinite bag, keep its ∞ indicator fixed while the cell changes by one. The model's actual commit happens on successful request completion; intermediate numbers are only a consistent visual preview.</p>
+<p>Test the last crystal disappearing, a pile remaining, the first crystal arriving, a large count and a crystal on a painted target. On cancellation before commit, the preview restores the original state and removes its carried object. Reversing the decorative motion must not execute reverse model operations.</p>
+<h3 id="paint-and-eraser">Paint and eraser</h3>
+<p>Fresh paint: tool deploys, sweeps across a rectangular reveal, then retracts. Full coverage is a boolean state, not a freehand accumulation of strokes. Repaint is a short additional tool movement on an already painted tile, without changing opacity or shade. Use approximately 450 ms fresh and 180 ms repeated.</p>
+<p>Erase uses the eraser, not a recycled crystal animation. Reveal the floor by removing only the paint layer. A clean cell gets a shorter acknowledgement. Targets, walls and crystals remain intact. Use approximately 350 ms for removal and 180 ms for an empty pass.</p>
+<h3 id="sensing">Sensing</h3>
+<p>An edge check briefly directs the independent probe toward exactly one adjacent edge. A useful phase layout is point 0–30%, show subject/value 30–80%, retract 80–100%, totalling about 180 ms. Do not swivel the whole logical robot just to look left. Do not show a ray crossing multiple cells.</p>
+<p>Current-cell checks focus the crystal/paint layer or its empty location. Bag checks focus the bag. Compass checks compare query direction and heading without turning it. The actual Python result is displayed, including zero and None. True means the predicate is true, not that something good happened: an empty bag must show True for <code>bag_empty()</code>.</p>
+<p>A False sensor is a normal branch decision. An illegal move is an error. The art must distinguish those situations. Negation in student Python does not require a second visual measurement.</p>
+<h3 id="errors">Errors</h3>
+<p>A wall collision is a small nudge toward the obstacle, never passage through it. Then restore the exact original centre and show the error cue. Missing crystal and empty bag use a short unsuccessful reach with no phantom successful object. An unavailable command, syntax error, limit or bridge failure requires a readable status, not a made-up movement or explosion.</p>
+<p>No destruction, death, alarm flash or long failure animation is required. The result should help a child locate the mistake, not punish them visually. The UI owns detailed explanation and source highlighting.</p>
+<h3 id="input-pause-and-lifecycle">Input, pause and lifecycle</h3>
+<p>Waiting for a key or click displays the relevant cue until a real input or cancellation settles it. Do not make the cue's own animation finish the Python wait. A timed wait follows runtime progress. A consumed key/click gets a short acknowledgement at its sampled target, not at the mouse's later location.</p>
+<p>Pause means frozen frame, not a new infinite loop. Idle blink is ambient and never delays Python. Program completion is neutral; the success seal appears only when a checker approves the task. Reset restores a snapshot, not a reverse route.</p>
+<h2 id="9-web-and-desktop-exports">9. Web and desktop exports</h2>
+<p>For the web provide source SVGs and validated clip data. The renderer mounts parts in DOM and uses WAAPI/a shared timeline. For local Python provide RGBA PNG layers or atlases generated from the same masters, plus pivots, anchors and the same tracks. A desktop runtime cannot be assumed to execute SVG browser animations.</p>
+<p>Preserve trim offsets and scale metadata in raster exports. Suggested base raster sizes are 64, 128 and 256 physical pixels per cell; they are exports, not three artistic designs. The source geometry should also be inspected at 32, 48 and 96 CSS-pixel cells. Repeated rotations should always start from a clean source layer to avoid cumulative blur.</p>
+<p>A clip may use a short pre-rendered local tool pose sequence only where rigid transforms are insufficient; it must still be driven by the common progress and cancellation contract. Do not render an entire world into a frame sequence.</p>
+<h2 id="10-preview-gallery-and-acceptance">10. Preview gallery and acceptance</h2>
+<p>Provide a standalone HTML gallery with controls for every template, its outcomes, four directions, initial headings, count and bag variants, paint/target overlaps, playback speed, progress seeking and reduced motion. It must work without an application server after the documented asset load/export step, or be delivered as a self-contained HTML preview with embedded vector art. It must not require remote old-repository files.</p>
+<p>Each example displays the template ID, associated Python call, parameters and before/after state. Include side-by-side exact snapshots at 0%, 25%, 50%, 75% and 100%. A test harness checks direct seeking against sequential playback and ensures cancellation removes all temporary nodes. The gallery's demo state is not a second authoritative game engine.</p>
+<p>Review these contrasts explicitly: relative heading versus absolute direction neutrality; crystal versus paint versus target; ordinary False versus fatal failure; completed versus accepted; empty versus infinite bag; a current-cell action versus an adjacent-edge query.</p>
+<p>All required variants must remain understandable in reduced motion and at small scale. No font files, borrowed characters, embedded rasters or opaque video-only masters are acceptable in the SVG delivery. The art work package is complete only when its files validate against the manifest and both web and desktop adapters can use the agreed geometry.</p>
+</main></div><footer class="footer">Requirements only. Original graphics and animation assets will be supplied in a separate work package. No finished artwork is included here.</footer><script>document.getElementById('nav-search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.toc a').forEach(a=>a.hidden=!a.textContent.toLowerCase().includes(q));});</script></body></html>

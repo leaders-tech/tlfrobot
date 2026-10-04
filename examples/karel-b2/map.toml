@@ -1,0 +1,35 @@
+format = "tlfrobot-world/1"
+id = "karel-b2-get"
+title = "Pick up the crystal"
+
+[rules]
+movement = "relative"
+tools = ["crystals"]
+
+[board]
+ascii = '''
++---+---+---+---+---+
+| .   .   .   .   . |
++   +   +---+   +   +
+| .   .   . | .   . |
++---+---+---+---+---+
+'''
+
+[robot]
+at = [0, 0]
+heading = "east"
+bag = 0
+
+[cells]
+crystals = [{ at = [2, 0], count = 1 }]
+
+[presentation]
+markers = [{ at = [4, 0], kind = "finish" }]
+
+[goal]
+robot_at = [4, 0]
+bag = 1
+
+[goal.crystals]
+mode = "exact"
+cells = []

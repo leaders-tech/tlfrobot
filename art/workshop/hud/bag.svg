@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Cargo bag</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="bag-base" data-part="bag-base">
+    <path d="M 23 17 V 12 Q 23 6 32 6 Q 41 6 41 12 V 17" fill="none" stroke="#21364B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <rect x="10" y="17" width="44" height="40" rx="10" fill="#F8F6EE" data-fill-role="body" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 11 43 Q 32 50 53 43 V 48 Q 53 56 45 56 H 19 Q 11 56 11 48 Z" fill="#CCDCE2" data-fill-role="body-shade" />
+    <rect x="8" y="30" width="8" height="19" rx="3" fill="#367FC1" data-fill-role="accent" stroke="#21364B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <rect x="48" y="30" width="8" height="19" rx="3" fill="#367FC1" data-fill-role="accent" stroke="#21364B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  </g>
+  <g id="bag-contents" data-part="bag-contents" opacity="0">
+    <path d="M 32 14 L 39 21 L 32 32 L 25 21 Z" fill="#41A9D1" data-fill-role="crystal" stroke="#21364B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  </g>
+  <g id="bag-lid" data-part="bag-lid">
+    <path d="M 13 18 H 51 V 29 Q 32 40 13 29 Z" fill="#F2B24F" data-fill-role="paint" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 18 21 H 46" fill="none" stroke="#F7D894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-light" />
+    <rect x="29" y="28" width="6" height="10" rx="2" fill="#367FC1" data-fill-role="accent" stroke="#21364B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  </g>
+  <g id="bag-indicator" data-part="bag-indicator">
+    <rect x="25" y="44" width="14" height="5" rx="2" fill="#537486" data-fill-role="frame" />
+  </g>
+</svg>

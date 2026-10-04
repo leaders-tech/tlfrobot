@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tlfrobot"
+dynamic = ["version"]
+description = "A grid robot for learning Python: one engine for the browser, the terminal and the judge"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Education",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.hatch.version]
+path = "src/tlfrobot/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tlfrobot"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/tlfrobot", "tests", "README.md", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

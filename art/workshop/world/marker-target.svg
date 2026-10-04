@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" data-theme="workshop">
+  <title>Target-cell annotation</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="marker" data-part="marker">
+    <path d="M 29 3 H 6 Q 3 3 3 6 V 29" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+    <path d="M 29 3 H 6 Q 3 3 3 6 V 29" fill="none" stroke="#BE833A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+    <path d="M 99 3 H 122 Q 125 3 125 6 V 29" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+    <path d="M 99 3 H 122 Q 125 3 125 6 V 29" fill="none" stroke="#BE833A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+    <path d="M 3 99 V 122 Q 3 125 6 125 H 29" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+    <path d="M 3 99 V 122 Q 3 125 6 125 H 29" fill="none" stroke="#BE833A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+    <path d="M 99 125 H 122 Q 125 125 125 122 V 99" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+    <path d="M 99 125 H 122 Q 125 125 125 122 V 99" fill="none" stroke="#BE833A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+    <circle cx="64" cy="3" r="2" fill="#BE833A" data-fill-role="paint-shade" />
+    <circle cx="125" cy="64" r="2" fill="#BE833A" data-fill-role="paint-shade" />
+    <circle cx="64" cy="125" r="2" fill="#BE833A" data-fill-role="paint-shade" />
+    <circle cx="3" cy="64" r="2" fill="#BE833A" data-fill-role="paint-shade" />
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>North-pointing direction arrow</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="arrow" data-part="arrow">
+    <path d="M 32 7 L 53 30 H 41 V 55 H 23 V 30 H 11 Z" fill="#A3DEE9" data-fill-role="accent-light" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 32 13 V 48" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+  </g>
+</svg>

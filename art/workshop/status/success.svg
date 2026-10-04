@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Verified task success</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="badge" data-part="badge">
+    <path d="M 32 4 L 41 10 L 51 12 L 54 23 L 60 32 L 54 41 L 51 52 L 41 54 L 32 60 L 23 54 L 13 52 L 10 41 L 4 32 L 10 23 L 13 12 L 23 10 Z" fill="#F7D894" data-fill-role="paint-light" stroke="#BE833A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+    <circle cx="32" cy="32" r="18" fill="#F8F6EE" data-fill-role="body" stroke="#BE833A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+  </g>
+  <g id="glyph" data-part="glyph">
+    <path d="M 23 32 L 29 38 L 42 25" fill="none" stroke="#BE833A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+  </g>
+</svg>

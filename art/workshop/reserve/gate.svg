@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 64" width="128" height="64" role="img" data-theme="workshop">
+  <title>Reserve sliding gate — graphics only</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="gate-frame" data-part="gate-frame">
+    <rect x="6" y="21" width="116" height="22" rx="3" fill="#21364B" data-fill-role="outline" />
+    <rect x="8" y="25" width="112" height="14" rx="1" fill="#CCDCE2" data-fill-role="body-shade" />
+  </g>
+  <g id="gate-panel" data-part="gate-panel">
+    <rect x="19" y="24" width="89" height="16" rx="3" fill="#A3DEE9" data-fill-role="accent-light" stroke="#21364B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 28 26 L 37 38" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 47 26 L 56 38" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 66 26 L 75 38" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 85 26 L 94 38" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+  </g>
+  <rect x="4" y="15" width="14" height="34" rx="5" fill="#F8F6EE" data-fill-role="body" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  <circle cx="11" cy="22" r="2.5" fill="#F2B24F" data-fill-role="paint" />
+  <rect x="110" y="15" width="14" height="34" rx="5" fill="#F8F6EE" data-fill-role="body" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  <circle cx="117" cy="22" r="2.5" fill="#F2B24F" data-fill-role="paint" />
+</svg>

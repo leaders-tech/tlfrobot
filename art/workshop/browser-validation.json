@@ -1,0 +1,28 @@
+{
+  "scope": "Chromium SVG/DOM preview tests only; no Pyodide or pygame integration.",
+  "errors": [],
+  "browser_version": "144.0.7559.96",
+  "loading": "Self-contained document loaded with set_content; no network or asset server.",
+  "asset_cards": 37,
+  "master_image_elements": 0,
+  "samples": {
+    "tested": 400,
+    "historyDependentFrames": []
+  },
+  "invariants": {
+    "checks": 24,
+    "errors": []
+  },
+  "playback": {
+    "pause": true,
+    "cancel": true,
+    "input_wait": true,
+    "errors": []
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "cards": 37
+  },
+  "status": "passed"
+}

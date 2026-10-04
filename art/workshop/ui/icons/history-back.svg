@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" data-theme="workshop">
+  <title>History back</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g>
+    <path d="M 23 7 L 12 16 L 23 25" fill="none" stroke="#537486" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+    <line x1="6" y1="7" x2="6" y2="25" fill="none" stroke="#537486" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+  </g>
+</svg>

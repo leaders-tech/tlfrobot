@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 24" width="128" height="24" role="img" data-theme="workshop">
+  <title>Horizontal one-cell wall</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="wall-middle" data-part="wall-middle">
+    <rect x="0" y="5" width="128" height="14" rx="0" fill="#21364B" data-fill-role="outline" />
+    <rect x="0" y="7" width="128" height="8" rx="0" fill="#CCDCE2" data-fill-role="body-shade" />
+    <line x1="0" y1="7" x2="128" y2="7" fill="none" stroke="#F8F6EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="body" />
+    <line x1="0" y1="17" x2="128" y2="17" fill="none" stroke="#537486" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+  </g>
+  <g id="wall-detail" data-part="wall-detail">
+    <circle cx="12" cy="11" r="2" fill="#537486" data-fill-role="frame" />
+    <circle cx="116" cy="11" r="2" fill="#537486" data-fill-role="frame" />
+    <rect x="56" y="8" width="16" height="5" rx="2" fill="#367FC1" data-fill-role="accent" />
+  </g>
+</svg>

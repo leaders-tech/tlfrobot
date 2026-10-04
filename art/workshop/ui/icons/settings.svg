@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" data-theme="workshop">
+  <title>Settings</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g>
+    <path d="M 13 3 H 19 L 20 8 L 24 6 L 28 11 L 25 15 L 29 18 L 26 24 L 21 23 L 19 29 H 13 L 11 24 L 6 26 L 3 21 L 7 17 L 3 13 L 6 7 L 11 9 Z" fill="#CCDCE2" data-fill-role="body-shade" stroke="#537486" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+    <circle cx="16" cy="16" r="5" fill="#F8F6EE" data-fill-role="body" stroke="#367FC1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+  </g>
+</svg>

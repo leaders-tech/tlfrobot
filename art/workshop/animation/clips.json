@@ -1,0 +1,504 @@
+{
+  "items": [
+    {
+      "id": "C01",
+      "key": "move.step",
+      "triggers": "move / north / south / east / west",
+      "duration_ms": "350",
+      "description": "Translate actor root between adjacent cell centres; optional drive-ring motion; absolute mode shows a short direction arrow.",
+      "parameters": "direction, movement policy, start/end anchors",
+      "assets": [
+        "A01",
+        "A11"
+      ],
+      "invariant": "No change of heading during a step.",
+      "scope": "R1",
+      "phases": {
+        "translation": [
+          0,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C02",
+      "key": "turn",
+      "triggers": "turn_left / turn_right / turn_around",
+      "duration_ms": "220 / 360",
+      "description": "Rotate heading group by signed -90, +90 or +180 degrees; draw a short procedural arc.",
+      "parameters": "signed angle, initial heading",
+      "assets": [
+        "A01"
+      ],
+      "invariant": "Never substitute +270 for -90; quarter turns use 220 ms, half turns 360 ms.",
+      "scope": "R1",
+      "phases": {
+        "rotation": [
+          0,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C03",
+      "key": "crystal.transfer",
+      "triggers": "take / put",
+      "duration_ms": "420",
+      "description": "Deploy gripper, move one crystal between current-cell object anchor and cargo anchor, settle, retract.",
+      "parameters": "take/put, before counts, finite/infinite bag",
+      "assets": [
+        "A01",
+        "A02",
+        "A09"
+      ],
+      "invariant": "No teleport from a neighbouring cell; visual accounting includes one in-transit crystal.",
+      "scope": "R1",
+      "phases": {
+        "reach": [
+          0,
+          0.25
+        ],
+        "transfer": [
+          0.25,
+          0.8
+        ],
+        "retract": [
+          0.8,
+          1
+        ],
+        "pickup": 0.25,
+        "deposit": 0.8
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C04",
+      "key": "paint.apply",
+      "triggers": "paint",
+      "duration_ms": "450 / 180",
+      "description": "Deploy roller and reveal the current-cell paint layer with a rectangular sweep; already-painted cells get a shorter visible pass.",
+      "parameters": "fresh/repeated, theme",
+      "assets": [
+        "A01",
+        "A03"
+      ],
+      "invariant": "Repeated paint does not darken or accumulate layers.",
+      "scope": "R1",
+      "phases": {
+        "deploy": [
+          0,
+          0.15
+        ],
+        "wipe": [
+          0.15,
+          0.85
+        ],
+        "retract": [
+          0.85,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C05",
+      "key": "paint.erase",
+      "triggers": "erase",
+      "duration_ms": "350 / 180",
+      "description": "Deploy eraser and wipe only the paint layer; clean cells get a short acknowledgement.",
+      "parameters": "painted/clean",
+      "assets": [
+        "A01",
+        "A03"
+      ],
+      "invariant": "Crystals, targets, walls and visit history are untouched.",
+      "scope": "R1",
+      "phases": {
+        "deploy": [
+          0,
+          0.15
+        ],
+        "wipe": [
+          0.15,
+          0.85
+        ],
+        "retract": [
+          0.85,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C06",
+      "key": "sense.edge",
+      "triggers": "all eight *_clear sensors",
+      "duration_ms": "180",
+      "description": "Point the independent probe at the requested adjacent edge and show the sampled True or False.",
+      "parameters": "world direction, clear/blocked, observed edge",
+      "assets": [
+        "A01",
+        "A12",
+        "A14",
+        "A15"
+      ],
+      "invariant": "A blocked probe is not a collision; do not turn the body or scan beyond one edge.",
+      "scope": "R1",
+      "phases": {
+        "point": [
+          0,
+          0.3
+        ],
+        "result": [
+          0.25,
+          0.5
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C07",
+      "key": "sense.cell",
+      "triggers": "on_crystal / painted / crystal_count",
+      "duration_ms": "180",
+      "description": "Focus the relevant current-cell layer or its empty location; display the exact sampled value.",
+      "parameters": "crystal/paint/count, result, target anchor",
+      "assets": [
+        "A02",
+        "A03",
+        "A13",
+        "A14",
+        "A15"
+      ],
+      "invariant": "Absence is visible; no synthetic object is added to the world.",
+      "scope": "R1",
+      "phases": {
+        "focus": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C08",
+      "key": "sense.bag",
+      "triggers": "bag_empty / bag_count",
+      "duration_ms": "180",
+      "description": "Focus the cargo indicator and reveal its sampled value.",
+      "parameters": "boolean/count, empty/nonempty/infinite",
+      "assets": [
+        "A09",
+        "A13",
+        "A14",
+        "A15"
+      ],
+      "invariant": "An empty bag yields True for bag_empty; an infinite bag_count yields None, not Infinity.",
+      "scope": "R1",
+      "phases": {
+        "focus": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C09",
+      "key": "sense.heading",
+      "triggers": "four facing_* sensors",
+      "duration_ms": "180",
+      "description": "Compare compass query with actor heading and show the sampled boolean.",
+      "parameters": "requested direction, actual heading, result",
+      "assets": [
+        "A01",
+        "A10",
+        "A14",
+        "A15"
+      ],
+      "invariant": "Do not rotate the logical actor while checking.",
+      "scope": "R1",
+      "phases": {
+        "result": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C10",
+      "key": "error.wall",
+      "triggers": "illegal step",
+      "duration_ms": "280",
+      "description": "Nudge toward the attempted edge without crossing it; return to the original centre; highlight the obstacle.",
+      "parameters": "attempted direction, edge",
+      "assets": [
+        "A01",
+        "A12",
+        "A16"
+      ],
+      "invariant": "No state mutation or successful movement flash.",
+      "scope": "R1",
+      "phases": {
+        "nudge": [
+          0,
+          0.5
+        ],
+        "return": [
+          0.5,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C11",
+      "key": "error.object",
+      "triggers": "NO_CRYSTAL / EMPTY_BAG",
+      "duration_ms": "240",
+      "description": "A short unsuccessful reach toward the empty cell or inventory, then return to idle.",
+      "parameters": "cell/bag",
+      "assets": [
+        "A01",
+        "A09",
+        "A16"
+      ],
+      "invariant": "No crystal may appear even transiently as a successful transfer.",
+      "scope": "R1",
+      "phases": {
+        "reach": [
+          0,
+          0.5
+        ],
+        "return": [
+          0.5,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C12",
+      "key": "error.status",
+      "triggers": "unavailable command / limits / Python / transport / invalid map",
+      "duration_ms": "160",
+      "description": "Show an error indicator and the correct source/field diagnostic.",
+      "parameters": "error category, source range, details",
+      "assets": [
+        "A16"
+      ],
+      "invariant": "No fake movement; invalid maps can be reported without drawing a world.",
+      "scope": "R1",
+      "phases": {
+        "reveal": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C13",
+      "key": "input.waiting",
+      "triggers": "wait_key / wait_click / wait",
+      "duration_ms": "request-controlled",
+      "description": "Show the corresponding input cue; for a timed wait reflect runtime progress.",
+      "parameters": "key/click/time",
+      "assets": [
+        "A19",
+        "A20",
+        "A21"
+      ],
+      "invariant": "The cue does not settle the request; only input, timer completion or cancellation does.",
+      "scope": "R1",
+      "phases": {
+        "completion": "host input / host timer; not decorative animation"
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C14",
+      "key": "input.received",
+      "triggers": "accepted key or cell click",
+      "duration_ms": "120",
+      "description": "Flash the consumed key or focus the selected cell before returning the value.",
+      "parameters": "key/click and sampled value",
+      "assets": [
+        "A13",
+        "A19",
+        "A20"
+      ],
+      "invariant": "Do not consume one physical input twice; do not highlight a new cursor position instead of the sampled cell.",
+      "scope": "R1",
+      "phases": {
+        "acknowledge": [
+          0,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C15",
+      "key": "lifecycle",
+      "triggers": "ready / completed / cancelled",
+      "duration_ms": "160",
+      "description": "A modest state change and matching status cue.",
+      "parameters": "ready/completed/cancelled",
+      "assets": [
+        "A01",
+        "A17"
+      ],
+      "invariant": "Completed is neutral; Stop does not celebrate success.",
+      "scope": "R1",
+      "phases": {
+        "reveal": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C16",
+      "key": "verdict",
+      "triggers": "checker pass / checker failure",
+      "duration_ms": "360",
+      "description": "Reveal success seal or focus concrete mismatching cells/edges.",
+      "parameters": "accepted/rejected, differences",
+      "assets": [
+        "A13",
+        "A16",
+        "A18"
+      ],
+      "invariant": "Only trusted/publicly configured checking triggers a success indication.",
+      "scope": "R1",
+      "phases": {
+        "reveal": [
+          0,
+          0.22
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C17",
+      "key": "view.reset",
+      "triggers": "reset or load another map",
+      "duration_ms": "120",
+      "description": "Replace with the authoritative initial snapshot through a brief crossfade.",
+      "parameters": "old/new snapshot",
+      "assets": [
+        "A01"
+      ],
+      "invariant": "Not reverse execution and not a sequence of robot commands.",
+      "scope": "R1",
+      "phases": {
+        "old_fade_out": [
+          0,
+          0.5
+        ],
+        "new_fade_in": [
+          0.5,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C18",
+      "key": "view.camera",
+      "triggers": "follow / pan / zoom / fit",
+      "duration_ms": "180",
+      "description": "Interpolate the view transform with actor/world geometry unchanged.",
+      "parameters": "viewport, target transform",
+      "assets": [
+        "A01"
+      ],
+      "invariant": "Camera animation does not affect sensor results or create world boundaries.",
+      "scope": "R1",
+      "phases": {
+        "view_transform": [
+          0,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C19",
+      "key": "focus.feedback",
+      "triggers": "source/value focus, counters, editor confirmation",
+      "duration_ms": "120",
+      "description": "Brief outline or opacity change on an existing target; numeric text updates at the owning clip cue.",
+      "parameters": "target, label, old/new value",
+      "assets": [
+        "A13"
+      ],
+      "invariant": "This is a helper track, not another command or an independent completion barrier.",
+      "scope": "R1",
+      "phases": {
+        "pulse": [
+          0,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    },
+    {
+      "id": "C20",
+      "key": "idle.blink",
+      "triggers": "optional idle expression",
+      "duration_ms": "120",
+      "description": "Close and reopen eyelids with a tiny scale/visibility change.",
+      "parameters": "eye state",
+      "assets": [
+        "A01"
+      ],
+      "invariant": "Ambient only, off when paused/hidden/reduced-motion; never delays Python.",
+      "scope": "R1",
+      "phases": {
+        "close": [
+          0,
+          0.5
+        ],
+        "open": [
+          0.5,
+          1
+        ]
+      },
+      "preview_evaluator": "animation/player.js: Stage.render",
+      "implementation_status": "reference visual preview; host game semantics and application integration not included"
+    }
+  ],
+  "format": "tlfrobot-art-clips/1",
+  "kind": "reference-preview-catalog",
+  "easing": {
+    "smoothstep": "p*p*(3-2*p), with p clamped to [0,1]",
+    "pulse": "sin(pi*p)"
+  },
+  "source_of_truth_for_preview": "animation/player.js",
+  "runtime_integration": "The host must provide authoritative before/after state and manage command completion. Do not use gallery state as a game model."
+}

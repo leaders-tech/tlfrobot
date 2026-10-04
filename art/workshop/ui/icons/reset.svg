@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" data-theme="workshop">
+  <title>Reset</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g>
+    <path d="M 25 11 A 10 10 0 1 0 26 21" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 25 5 V 12 H 18" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+  </g>
+</svg>

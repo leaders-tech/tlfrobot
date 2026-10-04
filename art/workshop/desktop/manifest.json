@@ -1,0 +1,2184 @@
+{
+  "format": "tlfrobot-raster-exports/1",
+  "input": "SVG masters only",
+  "items": [
+    {
+      "source": "robot/robot.svg",
+      "path": "desktop/64/robot/robot.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/crystal.svg",
+      "path": "desktop/64/world/crystal.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/paint.svg",
+      "path": "desktop/64/world/paint.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/wall.svg",
+      "path": "desktop/64/world/wall.png",
+      "pixel_size": [
+        64,
+        12
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/wall-joint.svg",
+      "path": "desktop/64/world/wall-joint.png",
+      "pixel_size": [
+        12,
+        12
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/marker-start.svg",
+      "path": "desktop/64/world/marker-start.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/marker-finish.svg",
+      "path": "desktop/64/world/marker-finish.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "world/marker-target.svg",
+      "path": "desktop/64/world/marker-target.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "hud/bag.svg",
+      "path": "desktop/64/hud/bag.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "hud/compass.svg",
+      "path": "desktop/64/hud/compass.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "hints/direction-arrow.svg",
+      "path": "desktop/64/hints/direction-arrow.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "hints/sensor-pulse.svg",
+      "path": "desktop/64/hints/sensor-pulse.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "hints/focus-ring.svg",
+      "path": "desktop/64/hints/focus-ring.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "status/boolean-true.svg",
+      "path": "desktop/64/status/boolean-true.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "status/boolean-false.svg",
+      "path": "desktop/64/status/boolean-false.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "status/error.svg",
+      "path": "desktop/64/status/error.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "status/completed.svg",
+      "path": "desktop/64/status/completed.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "status/success.svg",
+      "path": "desktop/64/status/success.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "input/keyboard.svg",
+      "path": "desktop/64/input/keyboard.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "input/pointer.svg",
+      "path": "desktop/64/input/pointer.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "input/clock.svg",
+      "path": "desktop/64/input/clock.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/controls.svg",
+      "path": "desktop/64/ui/controls.png",
+      "pixel_size": [
+        128,
+        96
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/play.svg",
+      "path": "desktop/64/ui/icons/play.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/pause.svg",
+      "path": "desktop/64/ui/icons/pause.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/stop.svg",
+      "path": "desktop/64/ui/icons/stop.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/step.svg",
+      "path": "desktop/64/ui/icons/step.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/reset.svg",
+      "path": "desktop/64/ui/icons/reset.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/history-back.svg",
+      "path": "desktop/64/ui/icons/history-back.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/history-forward.svg",
+      "path": "desktop/64/ui/icons/history-forward.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/speed.svg",
+      "path": "desktop/64/ui/icons/speed.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/zoom-in.svg",
+      "path": "desktop/64/ui/icons/zoom-in.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/zoom-out.svg",
+      "path": "desktop/64/ui/icons/zoom-out.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/fit.svg",
+      "path": "desktop/64/ui/icons/fit.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "ui/icons/settings.svg",
+      "path": "desktop/64/ui/icons/settings.png",
+      "pixel_size": [
+        16,
+        16
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "reserve/gate.svg",
+      "path": "desktop/64/reserve/gate.png",
+      "pixel_size": [
+        64,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "reserve/switch.svg",
+      "path": "desktop/64/reserve/switch.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "reserve/lamp.svg",
+      "path": "desktop/64/reserve/lamp.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "shadow",
+      "path": "desktop/64/robot-layers/shadow.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "drive",
+      "path": "desktop/64/robot-layers/drive.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "body",
+      "path": "desktop/64/robot-layers/body.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyes",
+      "path": "desktop/64/robot-layers/eyes.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyelids",
+      "path": "desktop/64/robot-layers/eyelids.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "cargo-hatch",
+      "path": "desktop/64/robot-layers/cargo-hatch.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "heading",
+      "path": "desktop/64/robot-layers/heading.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "sensor",
+      "path": "desktop/64/robot-layers/sensor.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-base",
+      "path": "desktop/64/robot-layers/gripper-base.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-left",
+      "path": "desktop/64/robot-layers/gripper-left.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-right",
+      "path": "desktop/64/robot-layers/gripper-right.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "roller",
+      "path": "desktop/64/robot-layers/roller.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eraser",
+      "path": "desktop/64/robot-layers/eraser.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 64,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 0.5,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "path": "desktop/128/robot/robot.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/crystal.svg",
+      "path": "desktop/128/world/crystal.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/paint.svg",
+      "path": "desktop/128/world/paint.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/wall.svg",
+      "path": "desktop/128/world/wall.png",
+      "pixel_size": [
+        128,
+        24
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/wall-joint.svg",
+      "path": "desktop/128/world/wall-joint.png",
+      "pixel_size": [
+        24,
+        24
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/marker-start.svg",
+      "path": "desktop/128/world/marker-start.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/marker-finish.svg",
+      "path": "desktop/128/world/marker-finish.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "world/marker-target.svg",
+      "path": "desktop/128/world/marker-target.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "hud/bag.svg",
+      "path": "desktop/128/hud/bag.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "hud/compass.svg",
+      "path": "desktop/128/hud/compass.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "hints/direction-arrow.svg",
+      "path": "desktop/128/hints/direction-arrow.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "hints/sensor-pulse.svg",
+      "path": "desktop/128/hints/sensor-pulse.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "hints/focus-ring.svg",
+      "path": "desktop/128/hints/focus-ring.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "status/boolean-true.svg",
+      "path": "desktop/128/status/boolean-true.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "status/boolean-false.svg",
+      "path": "desktop/128/status/boolean-false.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "status/error.svg",
+      "path": "desktop/128/status/error.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "status/completed.svg",
+      "path": "desktop/128/status/completed.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "status/success.svg",
+      "path": "desktop/128/status/success.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "input/keyboard.svg",
+      "path": "desktop/128/input/keyboard.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "input/pointer.svg",
+      "path": "desktop/128/input/pointer.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "input/clock.svg",
+      "path": "desktop/128/input/clock.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/controls.svg",
+      "path": "desktop/128/ui/controls.png",
+      "pixel_size": [
+        256,
+        192
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/play.svg",
+      "path": "desktop/128/ui/icons/play.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/pause.svg",
+      "path": "desktop/128/ui/icons/pause.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/stop.svg",
+      "path": "desktop/128/ui/icons/stop.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/step.svg",
+      "path": "desktop/128/ui/icons/step.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/reset.svg",
+      "path": "desktop/128/ui/icons/reset.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/history-back.svg",
+      "path": "desktop/128/ui/icons/history-back.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/history-forward.svg",
+      "path": "desktop/128/ui/icons/history-forward.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/speed.svg",
+      "path": "desktop/128/ui/icons/speed.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/zoom-in.svg",
+      "path": "desktop/128/ui/icons/zoom-in.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/zoom-out.svg",
+      "path": "desktop/128/ui/icons/zoom-out.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/fit.svg",
+      "path": "desktop/128/ui/icons/fit.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "ui/icons/settings.svg",
+      "path": "desktop/128/ui/icons/settings.png",
+      "pixel_size": [
+        32,
+        32
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "reserve/gate.svg",
+      "path": "desktop/128/reserve/gate.png",
+      "pixel_size": [
+        128,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "reserve/switch.svg",
+      "path": "desktop/128/reserve/switch.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "reserve/lamp.svg",
+      "path": "desktop/128/reserve/lamp.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "shadow",
+      "path": "desktop/128/robot-layers/shadow.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "drive",
+      "path": "desktop/128/robot-layers/drive.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "body",
+      "path": "desktop/128/robot-layers/body.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyes",
+      "path": "desktop/128/robot-layers/eyes.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyelids",
+      "path": "desktop/128/robot-layers/eyelids.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "cargo-hatch",
+      "path": "desktop/128/robot-layers/cargo-hatch.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "heading",
+      "path": "desktop/128/robot-layers/heading.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "sensor",
+      "path": "desktop/128/robot-layers/sensor.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-base",
+      "path": "desktop/128/robot-layers/gripper-base.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-left",
+      "path": "desktop/128/robot-layers/gripper-left.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-right",
+      "path": "desktop/128/robot-layers/gripper-right.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "roller",
+      "path": "desktop/128/robot-layers/roller.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eraser",
+      "path": "desktop/128/robot-layers/eraser.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 128,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "path": "desktop/256/robot/robot.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/crystal.svg",
+      "path": "desktop/256/world/crystal.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/paint.svg",
+      "path": "desktop/256/world/paint.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/wall.svg",
+      "path": "desktop/256/world/wall.png",
+      "pixel_size": [
+        256,
+        48
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/wall-joint.svg",
+      "path": "desktop/256/world/wall-joint.png",
+      "pixel_size": [
+        48,
+        48
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/marker-start.svg",
+      "path": "desktop/256/world/marker-start.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/marker-finish.svg",
+      "path": "desktop/256/world/marker-finish.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "world/marker-target.svg",
+      "path": "desktop/256/world/marker-target.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "hud/bag.svg",
+      "path": "desktop/256/hud/bag.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "hud/compass.svg",
+      "path": "desktop/256/hud/compass.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "hints/direction-arrow.svg",
+      "path": "desktop/256/hints/direction-arrow.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "hints/sensor-pulse.svg",
+      "path": "desktop/256/hints/sensor-pulse.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "hints/focus-ring.svg",
+      "path": "desktop/256/hints/focus-ring.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "status/boolean-true.svg",
+      "path": "desktop/256/status/boolean-true.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "status/boolean-false.svg",
+      "path": "desktop/256/status/boolean-false.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "status/error.svg",
+      "path": "desktop/256/status/error.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "status/completed.svg",
+      "path": "desktop/256/status/completed.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "status/success.svg",
+      "path": "desktop/256/status/success.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "input/keyboard.svg",
+      "path": "desktop/256/input/keyboard.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "input/pointer.svg",
+      "path": "desktop/256/input/pointer.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "input/clock.svg",
+      "path": "desktop/256/input/clock.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/controls.svg",
+      "path": "desktop/256/ui/controls.png",
+      "pixel_size": [
+        512,
+        384
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/play.svg",
+      "path": "desktop/256/ui/icons/play.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/pause.svg",
+      "path": "desktop/256/ui/icons/pause.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/stop.svg",
+      "path": "desktop/256/ui/icons/stop.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/step.svg",
+      "path": "desktop/256/ui/icons/step.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/reset.svg",
+      "path": "desktop/256/ui/icons/reset.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/history-back.svg",
+      "path": "desktop/256/ui/icons/history-back.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/history-forward.svg",
+      "path": "desktop/256/ui/icons/history-forward.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/speed.svg",
+      "path": "desktop/256/ui/icons/speed.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/zoom-in.svg",
+      "path": "desktop/256/ui/icons/zoom-in.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/zoom-out.svg",
+      "path": "desktop/256/ui/icons/zoom-out.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/fit.svg",
+      "path": "desktop/256/ui/icons/fit.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "ui/icons/settings.svg",
+      "path": "desktop/256/ui/icons/settings.png",
+      "pixel_size": [
+        64,
+        64
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "reserve/gate.svg",
+      "path": "desktop/256/reserve/gate.png",
+      "pixel_size": [
+        256,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "reserve/switch.svg",
+      "path": "desktop/256/reserve/switch.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "reserve/lamp.svg",
+      "path": "desktop/256/reserve/lamp.png",
+      "pixel_size": [
+        128,
+        128
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "shadow",
+      "path": "desktop/256/robot-layers/shadow.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "drive",
+      "path": "desktop/256/robot-layers/drive.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "body",
+      "path": "desktop/256/robot-layers/body.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyes",
+      "path": "desktop/256/robot-layers/eyes.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eyelids",
+      "path": "desktop/256/robot-layers/eyelids.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "cargo-hatch",
+      "path": "desktop/256/robot-layers/cargo-hatch.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "heading",
+      "path": "desktop/256/robot-layers/heading.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "sensor",
+      "path": "desktop/256/robot-layers/sensor.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-base",
+      "path": "desktop/256/robot-layers/gripper-base.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-left",
+      "path": "desktop/256/robot-layers/gripper-left.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "gripper-right",
+      "path": "desktop/256/robot-layers/gripper-right.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "roller",
+      "path": "desktop/256/robot-layers/roller.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    },
+    {
+      "source": "robot/robot.svg",
+      "part": "eraser",
+      "path": "desktop/256/robot-layers/eraser.png",
+      "pixel_size": [
+        256,
+        256
+      ],
+      "cell_pixels": 256,
+      "trim_offset": [
+        0,
+        0
+      ],
+      "scale": 2.0,
+      "note": "Full-canvas layer. Visibility forced to 1 for this exported part."
+    }
+  ]
+}

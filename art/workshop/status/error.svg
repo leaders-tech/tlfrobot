@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Calm warning</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="badge" data-part="badge">
+    <path d="M 27 9 Q 32 2 37 9 L 58 47 Q 62 55 53 56 H 11 Q 2 55 6 47 Z" fill="#F9E4D5" data-fill-role="error-light" stroke="#C1664F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="error" />
+  </g>
+  <g id="glyph" data-part="glyph">
+    <line x1="32" y1="22" x2="32" y2="36" fill="none" stroke="#C1664F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="error" />
+    <circle cx="32" cy="45" r="2.5" fill="#C1664F" data-fill-role="error" />
+  </g>
+</svg>

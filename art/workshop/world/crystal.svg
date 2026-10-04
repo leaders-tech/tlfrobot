@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Crystal component</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="crystal" data-part="crystal">
+    <path d="M 32 5 L 48 20 L 51 39 L 32 59 L 13 39 L 16 20 Z" fill="#41A9D1" data-fill-role="crystal" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 32 5 L 32 59 L 13 39 L 16 20 Z" fill="#B9EEF2" data-fill-role="crystal-light" />
+    <path d="M 32 5 L 39 26 L 51 39 L 32 59 Z" fill="#3476B8" data-fill-role="crystal-shade" />
+    <path d="M 16 20 L 25 26 L 32 5 M 13 39 L 25 26 L 32 59 M 25 26 L 39 26 L 48 20" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="white" />
+    <path d="M 32 5 L 48 20 L 51 39 L 32 59 L 13 39 L 16 20 Z" fill="none" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  </g>
+</svg>

@@ -1,0 +1,237 @@
+{
+  "status": "passed",
+  "svg_files": 37,
+  "required_svg_masters": 22,
+  "reserve_svg_masters": 3,
+  "derived_control_svgs": 12,
+  "embedded_raster_images": 0,
+  "svg_scripts": 0,
+  "desktop_png_exports": 150,
+  "animation_preview_templates": 20,
+  "errors": [],
+  "files": [
+    {
+      "path": "robot/robot.svg",
+      "bytes": 11423,
+      "elements": 86,
+      "sha256": "8c84f0f5163e58a608b8167108d5693b1acf78560d83f39f114253bc406c094e"
+    },
+    {
+      "path": "world/crystal.svg",
+      "bytes": 1152,
+      "elements": 9,
+      "sha256": "65afa8088ebf875cf1fd4b775025e1bf30d8fdf604021aa72b883b6acb71d89b"
+    },
+    {
+      "path": "world/paint.svg",
+      "bytes": 1483,
+      "elements": 11,
+      "sha256": "30eb89f7477b956eb4b00bebc13650ead29322156dafd31fd823b720d700ed17"
+    },
+    {
+      "path": "world/wall.svg",
+      "bytes": 1183,
+      "elements": 12,
+      "sha256": "c2b57ac51696831dbf672aafbfe5e233dd6b7f3edd88cf0dffb3366ed2ab895d"
+    },
+    {
+      "path": "world/wall-joint.svg",
+      "bytes": 818,
+      "elements": 7,
+      "sha256": "44915b4cf1169c91fadc5e7f5e37809d84c233539205d1a53bd1346c867269f7"
+    },
+    {
+      "path": "world/marker-start.svg",
+      "bytes": 851,
+      "elements": 8,
+      "sha256": "37b645adaef7bcb6c4b12e9a6077f5da359531ff3728ae500fae588c27fcf8f3"
+    },
+    {
+      "path": "world/marker-finish.svg",
+      "bytes": 2356,
+      "elements": 16,
+      "sha256": "01a967ecb6f57ba821a0065dd2f02efc85311bf40fe1f14ba360b53c79ed2908"
+    },
+    {
+      "path": "world/marker-target.svg",
+      "bytes": 2047,
+      "elements": 16,
+      "sha256": "a01225ee85e1d02b1e7ec4d8ae6b7977ff04e29a0676969cada828c6272719c3"
+    },
+    {
+      "path": "hud/bag.svg",
+      "bytes": 2279,
+      "elements": 17,
+      "sha256": "67a35a10fd4ce4e222498d0f4e0ceb0b25f266f7f3ea0b1b51a2665d86352afd"
+    },
+    {
+      "path": "hud/compass.svg",
+      "bytes": 2139,
+      "elements": 14,
+      "sha256": "993b184104f362c271bad9176aab854174da7f9effe3046a0cb5cb4e3e71dba3"
+    },
+    {
+      "path": "hints/direction-arrow.svg",
+      "bytes": 719,
+      "elements": 6,
+      "sha256": "fe5fae3cd4c8b81641e9eb7aaf18cfcb52288dc094d3a755a39d7ad8c548543b"
+    },
+    {
+      "path": "hints/sensor-pulse.svg",
+      "bytes": 1079,
+      "elements": 9,
+      "sha256": "b34de6f353c65ae6cd5ba801024d88f4af3f413fd066f2061a4d66976725445b"
+    },
+    {
+      "path": "hints/focus-ring.svg",
+      "bytes": 2202,
+      "elements": 16,
+      "sha256": "6121754332ff8d6126cb533c9428b6eed29868ec7f25e55738e1348af93788a9"
+    },
+    {
+      "path": "status/boolean-true.svg",
+      "bytes": 762,
+      "elements": 7,
+      "sha256": "61a6e01bbad55c1092e05a0931c1a60ccd6d5abacc117fd1211842cd75fa4747"
+    },
+    {
+      "path": "status/boolean-false.svg",
+      "bytes": 936,
+      "elements": 8,
+      "sha256": "a83b172ea63198ce4b81bc0a47b7fcce5bbdd3b1f2e11fa92501a6a6cb14a171"
+    },
+    {
+      "path": "status/error.svg",
+      "bytes": 850,
+      "elements": 8,
+      "sha256": "29e0890dd12d23578a01ab34c1b7b75a0fb49e5305498f7f9a78a2026fdae561"
+    },
+    {
+      "path": "status/completed.svg",
+      "bytes": 869,
+      "elements": 8,
+      "sha256": "e0a406aa8cd2eac2e428126021b5432a454f7c47f868f4e051fe0eb110050beb"
+    },
+    {
+      "path": "status/success.svg",
+      "bytes": 1045,
+      "elements": 8,
+      "sha256": "ad95e7dc22ceb3fce088e9ab92e31e5b3022332d8eab086bbd24f9f7d7432fdf"
+    },
+    {
+      "path": "input/keyboard.svg",
+      "bytes": 1826,
+      "elements": 17,
+      "sha256": "91d61c433e52c28e6179427a636ef861262bf678e33966a07af1c0a4b35f51ba"
+    },
+    {
+      "path": "input/pointer.svg",
+      "bytes": 1372,
+      "elements": 11,
+      "sha256": "7830be155dfa0bdeed4e5ae8f913a96d06461955f5a0af96ec1538f2a65340ea"
+    },
+    {
+      "path": "input/clock.svg",
+      "bytes": 1992,
+      "elements": 15,
+      "sha256": "4827c8f8846d931449a502fc7e5da298bcd0aa43780ebf3ae5d8d312177f2de4"
+    },
+    {
+      "path": "ui/controls.svg",
+      "bytes": 8244,
+      "elements": 84,
+      "sha256": "a20396622410ceb5efdb088f50c18e7c8d247ec33dd7ee81986e99f6e95e9544"
+    },
+    {
+      "path": "ui/icons/play.svg",
+      "bytes": 493,
+      "elements": 5,
+      "sha256": "5f8b095649611377f09e126786e2a3d1ee5d02b341b89fa31fb40362b3b0dba0"
+    },
+    {
+      "path": "ui/icons/pause.svg",
+      "bytes": 490,
+      "elements": 6,
+      "sha256": "871cd91eeedc63f983116b074c97e87c7a5ce1f2aa7d9809591429f6d3f5024b"
+    },
+    {
+      "path": "ui/icons/stop.svg",
+      "bytes": 395,
+      "elements": 5,
+      "sha256": "1e6b650b5c241cda176a6f3f94e1a044a4f5d8b24fcfbbb0bc9dfeb6f13f36e7"
+    },
+    {
+      "path": "ui/icons/step.svg",
+      "bytes": 655,
+      "elements": 6,
+      "sha256": "1da6d17de25c4753392a0fc65e45414bd5712d73882cf635ac289e701a0f45cd"
+    },
+    {
+      "path": "ui/icons/reset.svg",
+      "bytes": 620,
+      "elements": 6,
+      "sha256": "5568d99de162d583ad0db58dbbc2608d4b30f5152a0f4f5c0148ec8248e6af89"
+    },
+    {
+      "path": "ui/icons/history-back.svg",
+      "bytes": 628,
+      "elements": 6,
+      "sha256": "0697b18b1d9e4bfacdb51d0882af6051c3c27a1e904c1597ff70494a4d3c84d5"
+    },
+    {
+      "path": "ui/icons/history-forward.svg",
+      "bytes": 631,
+      "elements": 6,
+      "sha256": "6d5efe4ef90fc7400e1765d9b4f5f520bab98063e5665c6f8948c6c3329dc965"
+    },
+    {
+      "path": "ui/icons/speed.svg",
+      "bytes": 931,
+      "elements": 10,
+      "sha256": "9f08128e4c8d2516fd0d66866aa497d6df53e4114a12cf77668152da932466fb"
+    },
+    {
+      "path": "ui/icons/zoom-in.svg",
+      "bytes": 954,
+      "elements": 8,
+      "sha256": "fa51e0dad2e37804539ab1c25bc6262d872968ec212a82daa4ab101a3f14ebdb"
+    },
+    {
+      "path": "ui/icons/zoom-out.svg",
+      "bytes": 791,
+      "elements": 7,
+      "sha256": "c7836b5fdb3155e9b2e5883b3dbf62bafcc5de221cff64a23139dfb767f50437"
+    },
+    {
+      "path": "ui/icons/fit.svg",
+      "bytes": 993,
+      "elements": 9,
+      "sha256": "5d7cd777a22539da2259fc958d58d4d8e9c6c6ac2ac9892ac3a245c022e66fa0"
+    },
+    {
+      "path": "ui/icons/settings.svg",
+      "bytes": 785,
+      "elements": 6,
+      "sha256": "acd66b195f15475cf6eafd79f0a855067f5759ba6b9cbf81c3e319c8f1ea37fc"
+    },
+    {
+      "path": "reserve/gate.svg",
+      "bytes": 1999,
+      "elements": 16,
+      "sha256": "9d9353ba277fdcb4bb09952e990d073952af9e6fb710eb87998cd0f5e5d036e0"
+    },
+    {
+      "path": "reserve/switch.svg",
+      "bytes": 1207,
+      "elements": 10,
+      "sha256": "df24ac327e396acd1012bffce471ea05419580c360beaa333b8017ba54c3bdd3"
+    },
+    {
+      "path": "reserve/lamp.svg",
+      "bytes": 2257,
+      "elements": 16,
+      "sha256": "2c2843d2968a3e547fb4d7364f8f0f6a0b7fce57a3dcc67f0dbf2e9ab87de459"
+    }
+  ],
+  "test_scope": "XML and content validation. Runtime adapter integration is outside this test."
+}

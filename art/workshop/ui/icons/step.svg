@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" data-theme="workshop">
+  <title>Step</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g>
+    <path d="M 5 6 L 21 16 L 5 26 Z" fill="#367FC1" data-fill-role="accent" stroke="#21364B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <line x1="26" y1="6" x2="26" y2="26" fill="none" stroke="#21364B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+  </g>
+</svg>

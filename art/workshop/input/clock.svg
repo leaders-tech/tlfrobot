@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Timed wait clock</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="clock-frame" data-part="clock-frame">
+    <circle cx="32" cy="34" r="24" fill="#F8F6EE" data-fill-role="body" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <rect x="26" y="3" width="12" height="7" rx="2" fill="#367FC1" data-fill-role="accent" stroke="#21364B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <line x1="32" y1="14" x2="32" y2="17" transform="rotate(0 32 34)" fill="none" stroke="#537486" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+    <line x1="32" y1="14" x2="32" y2="17" transform="rotate(90 32 34)" fill="none" stroke="#537486" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+    <line x1="32" y1="14" x2="32" y2="17" transform="rotate(180 32 34)" fill="none" stroke="#537486" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+    <line x1="32" y1="14" x2="32" y2="17" transform="rotate(270 32 34)" fill="none" stroke="#537486" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+  </g>
+  <g id="clock-hand" data-part="clock-hand">
+    <path d="M 32 34 V 19" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+  </g>
+  <g id="clock-hour" data-part="clock-hour">
+    <path d="M 32 34 L 42 40" fill="none" stroke="#537486" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="frame" />
+  </g>
+  <circle cx="32" cy="34" r="2.5" fill="#21364B" data-fill-role="outline" />
+</svg>

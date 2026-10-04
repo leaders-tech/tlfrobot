@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Reserve push button — graphics only</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="switch-base" data-part="switch-base">
+    <circle cx="32" cy="34" r="24" fill="#CCDCE2" data-fill-role="body-shade" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <circle cx="32" cy="33" r="18" fill="#21364B" data-fill-role="outline" />
+  </g>
+  <g id="switch-cap" data-part="switch-cap">
+    <circle cx="32" cy="29" r="16" fill="#F2B24F" data-fill-role="paint" stroke="#21364B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="outline" />
+    <path d="M 23 20 Q 32 15 40 21" fill="none" stroke="#F7D894" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-light" />
+    <circle cx="32" cy="29" r="5" fill="none" stroke="#BE833A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="paint-shade" />
+  </g>
+</svg>

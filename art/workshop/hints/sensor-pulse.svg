@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" data-theme="workshop">
+  <title>Short north-facing sensor pulse</title>
+  <desc>Original Timo workshop vector artwork. Geometric paths and shapes only; no raster images.</desc>
+  <g id="pulse" data-part="pulse">
+    <circle cx="32" cy="54" r="3" fill="#367FC1" data-fill-role="accent" />
+    <line x1="32" y1="46" x2="32" y2="34" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 23 29 Q 32 22 41 29" fill="none" stroke="#367FC1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 16 20 Q 32 8 48 20" fill="none" stroke="#367FC1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent" />
+    <path d="M 10 11 Q 32 -1 54 11" fill="none" stroke="#A3DEE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-stroke-role="accent-light" />
+  </g>
+</svg>
