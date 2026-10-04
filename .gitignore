@@ -7,3 +7,5 @@ web/dist/
 # Third-party task collections and graphics with unclear redistribution rights:
 # kept locally for reference, not committed.
 docs/sources/
+test-results/
+web/catalog.json

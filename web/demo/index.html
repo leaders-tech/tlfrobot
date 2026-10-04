@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tlfrobot demo</title>
+<style>
+  :root { --bg:#f7f9f9; --ink:#21364b; --muted:#537486; --line:#d8e2e4; --accent:#367fc1; }
+  body { margin:0; font:15px/1.45 system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+  main { display:grid; grid-template-columns:minmax(280px, 1fr) minmax(320px, 1.2fr); gap:16px; padding:16px; max-width:1200px; margin:0 auto; }
+  @media (max-width: 800px) { main { grid-template-columns:1fr; } }
+  textarea { width:100%; box-sizing:border-box; height:320px; font:13px/1.5 ui-monospace, Menlo, monospace; border:1px solid var(--line); border-radius:8px; padding:8px; }
+  .bar { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; align-items:center; }
+  button, select { font:inherit; padding:4px 10px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); }
+  button:disabled { opacity:.45; }
+  #log { font:12px/1.5 ui-monospace, Menlo, monospace; background:#fff; border:1px solid var(--line); border-radius:8px; height:180px; overflow:auto; padding:6px; white-space:pre-wrap; }
+  #status { color:var(--muted); }
+  .world-tabs button[aria-pressed=true] { background:var(--accent); color:#fff; border-color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <div class="bar">
+      <label>Example <select id="example"></select></label>
+    </div>
+    <textarea id="code" spellcheck="false"></textarea>
+    <div class="bar">
+      <button id="run">Run</button><button id="pause">Pause</button><button id="step">Step</button>
+      <button id="stop">Stop</button><button id="reset">Reset</button>
+      <label>Speed <select id="speed"><option>0.25</option><option>0.5</option><option selected>1</option><option>2</option><option>4</option><option value="Infinity">instant</option></select></label>
+    </div>
+    <div id="status">loading…</div>
+    <div id="log"></div>
+  </section>
+  <section>
+    <div class="bar world-tabs" id="tabs"></div>
+    <div id="scene"></div>
+  </section>
+</main>
+<script type="module">
+  import { RobotLab, support } from "/s/tlfrobot/tlfrobot-web.js";
+  const $ = (id) => document.getElementById(id);
+  const EXAMPLES = {
+    "karel-b2": { worlds: ["map.toml"], code: "solution.py" },
+  };
+  const ok = support();
+  if (!ok.ok) $("status").textContent = ok.reason;
+  const lab = new RobotLab($("scene"));
+  window.lab = lab;
+  const log = (t) => { $("log").textContent += t; $("log").scrollTop = 1e9; };
+  lab.on("state", (s) => { $("status").textContent = s; document.body.dataset.state = s; });
+  lab.on("call", (req, phase) => { if (phase === "end") log(`${req.line ?? "?"}: ${req.op}()${req.kind === "sensor" ? " → " + JSON.stringify(req.result) : ""}${req.error ? "  ✗ " + req.error.code : ""}\n`); });
+  lab.on("output", (t) => log(t));
+  lab.on("done", (r) => { log(`— ${r.status}${r.verdict ? ": " + r.verdict.message : r.error ? ": " + r.error.message : ""}\n`); window.lastResult = r; });
+  async function loadExample(name) {
+    const ex = EXAMPLES[name];
+    const worlds = [];
+    for (const w of ex.worlds) worlds.push({ label: w, map: await (await fetch(`/examples/${name}/${w}`)).text() });
+    $("code").value = await (await fetch(`/examples/${name}/${ex.code}`)).text();
+    const parsed = await lab.load(worlds);
+    $("tabs").replaceChildren(...worlds.map((w, i) => {
+      const b = document.createElement("button");
+      b.textContent = w.label + (parsed[i].ok ? "" : " ✗");
+      b.setAttribute("aria-pressed", String(i === lab.selected));
+      b.onclick = () => { lab.select(i); [...$("tabs").children].forEach((c, j) => c.setAttribute("aria-pressed", String(j === i))); };
+      return b;
+    }));
+  }
+  for (const name of Object.keys(EXAMPLES)) $("example").append(new Option(name, name));
+  $("example").onchange = () => loadExample($("example").value);
+  $("run").onclick = () => { $("log").textContent = ""; lab.run($("code").value); };
+  $("pause").onclick = () => lab.state === "paused" ? lab.resume() : lab.pause();
+  $("step").onclick = () => lab.state === "running" || lab.state === "paused" ? lab.step() : ($("log").textContent = "", lab.run($("code").value, { paused: true }).then(() => {}), lab.step());
+  $("stop").onclick = () => lab.stop();
+  $("reset").onclick = () => lab.reset();
+  $("speed").onchange = () => lab.setSpeed(Number($("speed").value));
+  window.ready = loadExample("karel-b2").then(() => { $("status").textContent = "ready"; });
+</script>
+</body>
+</html>
