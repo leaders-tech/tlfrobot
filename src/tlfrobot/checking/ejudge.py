@@ -42,4 +42,7 @@ def main(argv: list[str] | None = None) -> int:
         res = CheckResult(CHECKER_ERROR, "CHECKER_CRASH", "the checker crashed")
     print(f"{res.code}: {res.message}")
     sys.stdout.flush()
+    if not res.accepted:
+        # ejudge shows the checker's stderr in the report; say it there too.
+        print(f"{res.code}: {res.message}", file=sys.stderr)
     return EXIT[res.verdict]

@@ -21,6 +21,11 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("map")
     c.add_argument("trace", help="trace file, or - for stdin")
     c.add_argument("--goal")
+    g = sub.add_parser("goal", help="run a reference solution on a world (stdin) and print the goal it reaches")
+    g.add_argument("solution")
+    g.add_argument("--parts", default="robot_at,crystals",
+                   help="comma-separated: robot_at, robot_heading, bag, crystals, paint")
+    g.add_argument("--map", dest="map_source", default="-")
     sub.add_parser("catalog", help="print the function catalogue as JSON")
     args = p.parse_args(argv)
 
@@ -62,6 +67,19 @@ def main(argv: list[str] | None = None) -> int:
                     res = check_stream(world, fh, goal)
         print(json.dumps(res.as_json(), ensure_ascii=False, indent=2))
         return 0 if res.accepted else 1
+    if args.cmd == "goal":
+        from . import maps
+        from .authoring import goal_from_state
+        from .runtime import resolve_map, run_source
+        from pathlib import Path
+        src = Path(args.solution)
+        world = resolve_map(src, args.map_source)
+        res = run_source(src.read_text(encoding="utf-8"), world, filename=src.name, capture_output=True)
+        if res.status != "completed":
+            print(f"tlfrobot goal: the reference solution did not complete: {res.status} {res.error}", file=sys.stderr)
+            return 1
+        sys.stdout.write(goal_from_state(world, res.state, [p for p in args.parts.split(",") if p]))
+        return 0
     if args.cmd == "catalog":
         from .catalog import as_json
         print(json.dumps(as_json(), ensure_ascii=False, indent=2))
