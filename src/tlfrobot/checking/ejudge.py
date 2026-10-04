@@ -5,7 +5,7 @@
 ejudge calls `check <input> <output> [<answer>]`: the input is the trusted
 world, the output is the contestant's trace, the answer (with use_corr) the
 private goal. Exit codes: 0 OK, 1 WA, 2 PE; anything else (we use 6) is a check failure.
-The message goes to stdout, which ejudge shows as the checker's comment.
+The message goes to stdout only: ejudge joins the checker's stdout and stderr into its comment.
 """
 from __future__ import annotations
 
@@ -42,7 +42,4 @@ def main(argv: list[str] | None = None) -> int:
         res = CheckResult(CHECKER_ERROR, "CHECKER_CRASH", "the checker crashed")
     print(f"{res.code}: {res.message}")
     sys.stdout.flush()
-    if not res.accepted:
-        # ejudge shows the checker's stderr in the report; say it there too.
-        print(f"{res.code}: {res.message}", file=sys.stderr)
     return EXIT[res.verdict]
