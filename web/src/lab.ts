@@ -26,8 +26,11 @@ type RunHandlers = { request(req: Request): void; out(text: string): void; done(
 class Host {
   private worker: Worker | null = null;
   private ready: Promise<void> | null = null;
-  mailbox = new Int32Array(new SharedArrayBuffer(MB.LENGTH * 4));
-  interrupt = new Int32Array(new SharedArrayBuffer(4));
+  // Shared memory exists only on a cross-origin isolated page. Without it the
+  // worker can still parse worlds (pictures on a course page); runs refuse.
+  private shared = support().ok;
+  mailbox = new Int32Array(this.shared ? new SharedArrayBuffer(MB.LENGTH * 4) : new ArrayBuffer(MB.LENGTH * 4));
+  interrupt = new Int32Array(this.shared ? new SharedArrayBuffer(4) : new ArrayBuffer(4));
   private nextId = 1;
   private parses = new Map<number, (r: ParsedWorld[]) => void>();
   private runs = new Map<number, RunHandlers>();
@@ -76,6 +79,12 @@ class Host {
 
   run(source: string, map: string, goal: string | null, handlers: RunHandlers): { runId: number; finished: Promise<RunResult> } {
     const runId = this.nextId++;
+    const why = support();
+    if (!why.ok) {
+      const result: RunResult = { status: "crashed", error: { code: "RUNTIME_FAILURE", message: why.reason }, calls: 0, state: null, verdict: null };
+      queueMicrotask(() => handlers.done(result));
+      return { runId, finished: Promise.resolve(result) };
+    }
     const finished = this.exclusive(async () => {
       await this.start();
       Atomics.store(this.mailbox, MB.SEQ, 0);

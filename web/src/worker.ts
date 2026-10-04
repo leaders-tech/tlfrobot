@@ -93,7 +93,7 @@ function flush(): void {
 
 async function init(msg: any): Promise<void> {
   mailbox = new Int32Array(msg.mailbox);
-  interrupt = msg.interrupt ? new Int32Array(msg.interrupt) : null;
+  interrupt = typeof SharedArrayBuffer === "function" && msg.interrupt instanceof SharedArrayBuffer ? new Int32Array(msg.interrupt) : null;
   const { boot } = await import(/* @vite-ignore */ BOOT_URL);
   pyodide = await boot({ interrupt });
   await pyodide.loadPackage(WHEEL_URL);
