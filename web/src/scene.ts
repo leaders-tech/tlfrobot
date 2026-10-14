@@ -78,7 +78,9 @@ export function pyRepr(v: unknown): string {
 
 type CrystalNodes = { g: SVGGElement; use: SVGUseElement; badge: SVGGElement; text: SVGTextElement };
 
-export type SceneOptions = { reducedMotion?: boolean; hud?: boolean };
+/** `hud`: the bag (and compass) above the board, only in worlds that have them.
+ *  Status words and the last call are the page's to show, once (D346 in cstlf-portal). */
+export type SceneOptions = { reducedMotion?: boolean; hud?: boolean | "bag" };
 
 export class Scene {
   readonly svg: SVGSVGElement;
@@ -105,24 +107,29 @@ export class Scene {
   private wipeRect!: SVGRectElement;
   private wipeClipId = "";
   private fx!: Record<string, SVGElement>;
-  private hud!: { bagText: SVGTextElement; bagIcon: Mounted | null; bagRing: SVGElement; compass: Mounted | null;
-    compassRing: SVGElement; callText: SVGTextElement; statusIcons: Record<string, SVGElement>; statusText: SVGTextElement };
+  private hud: { bagText: SVGTextElement; bagIcon: Mounted | null; bagRing: SVGElement; compass: Mounted | null;
+    compassRing: SVGElement } | null = null;
   private bubble!: { g: SVGGElement; rect: SVGRectElement; text: SVGTextElement; icons: Record<string, SVGElement> };
   private verdictMarks: SVGElement[] = [];
   /** cells a clip frame changed, to put back at the next frame */
   private touchedCrystals = new Set<string>();
   private touchedPaint = new Set<string>();
   reducedMotion: boolean;
-  private showHud: boolean;
+  private wantHud: boolean;
+  private showHud = false;
 
   constructor(container: Element, options: SceneOptions = {}) {
     this.reducedMotion = options.reducedMotion ??
       (typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches);
-    this.showHud = options.hud ?? true;
+    this.wantHud = options.hud !== false;
     this.svg = el("svg", { role: "img", class: "tlfrobot-scene" });
+    // As wide as the host allows and never taller than --tlfrobot-max-height:
+    // the box keeps the world's proportions until the height cap, and past it
+    // the drawing stays centred in a wider box (preserveAspectRatio meet).
     this.svg.style.display = "block";
     this.svg.style.width = "100%";
     this.svg.style.height = "auto";
+    this.svg.style.maxHeight = "var(--tlfrobot-max-height, 560px)";
     this.defs = el("defs", {}, this.svg);
     this.symbols = new Symbols(this.defs);
     container.appendChild(this.svg);
@@ -157,6 +164,9 @@ export class Scene {
   private py(y: number) { return (this.view.y0 + this.view.h - 1 - y) * CELL + PAD + (this.showHud ? HUD : 0); }
 
   private layout(): void {
+    const r = this.world.rules;
+    this.showHud = this.wantHud && (r.tools.includes("crystals") || r.sensors.includes("compass"));
+    this.hud = null;
     for (const n of Array.from(this.svg.childNodes)) if (n !== this.defs) this.svg.removeChild(n);
     while (this.defs.firstChild) this.defs.removeChild(this.defs.firstChild);
     this.symbols = new Symbols(this.defs);
@@ -164,6 +174,7 @@ export class Scene {
     const width = w * CELL + 2 * PAD;
     const height = h * CELL + 2 * PAD + (this.showHud ? HUD : 0);
     this.svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    this.svg.style.aspectRatio = `${width} / ${height}`;
     const names = ["floor", "paint", "markers", "walls", "crystals", "actor", "fx", "hud"];
     this.layers = Object.fromEntries(names.map((n) => [n, el("g", { "data-layer": n }, this.svg)]));
     this.wipeClipId = `tlfrobot-wipe-${Math.random().toString(36).slice(2)}`;
@@ -371,8 +382,7 @@ export class Scene {
 
   private drawHud(): void {
     const g = this.layers.hud;
-    const width = this.view.w * CELL + 2 * PAD;
-    el("rect", { x: PAD, y: 12, width: width - 2 * PAD, height: HUD - 24, rx: 20, fill: "#EDF3F4" }, g);
+    const band = el("rect", { x: PAD, y: 12, height: HUD - 24, rx: 20, fill: "#EDF3F4" }, g);
     let x = PAD + 16;
     let bagIcon: Mounted | null = null;
     const bagRing = el("g", {}, g);
@@ -383,26 +393,17 @@ export class Scene {
       mount("hints/focus-ring.svg", bagRing, x - 10, 10, 84, 84);
       bagText.setAttribute("x", String(x + 74));
       bagText.setAttribute("y", String(52));
-      x += 160;
+      x += 170;
     }
     let compass: Mounted | null = null;
     const compassRing = el("g", {}, g);
     if (this.world.rules.sensors.includes("compass")) {
       compass = mount("hud/compass.svg", g, x, 20, 64, 64);
       mount("hints/focus-ring.svg", compassRing, x - 10, 10, 84, 84);
-      x += 100;
+      x += 90;
     }
-    const statusIcons: Record<string, SVGElement> = {};
-    for (const s of ["completed", "success", "error"]) {
-      const ig = el("g", {}, g);
-      mount(`status/${s}.svg`, ig, width - PAD - 70, 24, 56, 56);
-      statusIcons[s] = ig;
-    }
-    const statusText = el("text", { x: width - PAD - 84, y: 52, "text-anchor": "end", "font-size": 28, "font-weight": 600,
-      "font-family": "system-ui, sans-serif", fill: PALETTE.outline, "dominant-baseline": "central" }, g);
-    const callText = el("text", { x, y: 52, "font-size": 28, "font-family": "ui-monospace, SFMono-Regular, Menlo, monospace",
-      fill: PALETTE.frame, "dominant-baseline": "central" }, g);
-    this.hud = { bagText, bagIcon, bagRing, compass, compassRing, callText, statusIcons, statusText };
+    band.setAttribute("width", String(x - PAD));
+    this.hud = { bagText, bagIcon, bagRing, compass, compassRing };
   }
 
   // ------------------------------------------------------------------ poses
@@ -473,7 +474,8 @@ export class Scene {
     const cx = this.px(at[0]) + 64;
     let top = this.py(at[1]) - h - 6;
     if (top < (this.showHud ? HUD : 0)) top = this.py(at[1]) + CELL + 6;
-    const x = cx - w / 2;
+    const full = this.view.w * CELL + 2 * PAD;
+    const x = Math.max(4, Math.min(cx - w / 2, full - w - 4));
     b.rect.setAttribute("x", String(x));
     b.rect.setAttribute("y", String(top));
     b.rect.setAttribute("width", String(w));
@@ -724,12 +726,8 @@ export class Scene {
     this.setCall(req);
   }
 
-  setCall(req: Request | null): void {
-    if (!this.hud) return;
-    if (!req) { this.hud.callText.textContent = ""; return; }
-    const value = req.kind === "sensor" && !req.error ? ` → ${pyRepr(req.result)}` : "";
-    this.hud.callText.textContent = `${req.op}()${value}`;
-  }
+  /** Kept for callers; the last call is shown by the page's log, not on the map. */
+  setCall(_req: Request | null): void {}
 
   /** A plane's camera follows the robot out of the viewport. */
   private follow(): void {
@@ -748,12 +746,8 @@ export class Scene {
     this.setStatus(null);
   }
 
-  setStatus(status: { kind: "completed" | "success" | "error"; text: string } | null): void {
-    if (!this.hud) return;
-    for (const [name, node] of Object.entries(this.hud.statusIcons)) {
-      node.setAttribute("opacity", status && status.kind === name ? "1" : "0");
-    }
-    this.hud.statusText.textContent = status?.text ?? "";
+  /** The words are the page's (D346 in cstlf-portal); on the map a new status only clears the old verdict marks. */
+  setStatus(_status: { kind: "completed" | "success" | "error"; text: string } | null): void {
     for (const m of this.verdictMarks) m.remove();
     this.verdictMarks = [];
   }

@@ -35,7 +35,8 @@ export class TlfrobotWorlds extends HTMLElement {
     host().parse(worlds.map((w) => w.map), worlds.map((w) => w.goal ?? null)).then((parsed) => {
       parsed.forEach((p, i) => {
         const fig = document.createElement("figure");
-        fig.style.cssText = "margin:0;flex:1 1 220px;max-width:420px";
+        // Thumbnails: the live map is the workbench's; the statement only shows the worlds.
+        fig.style.cssText = "margin:0;flex:0 1 auto;min-width:160px;max-width:360px;--tlfrobot-max-height:260px";
         box.appendChild(fig);
         if (p.ok) {
           const scene = new Scene(fig, { hud: false });
@@ -45,10 +46,12 @@ export class TlfrobotWorlds extends HTMLElement {
           err.textContent = p.error;
           fig.appendChild(err);
         }
-        const cap = document.createElement("figcaption");
-        cap.textContent = worlds[i].label;
-        cap.style.cssText = "text-align:center;font-size:.85em;opacity:.8";
-        fig.appendChild(cap);
+        if (worlds.length > 1) {
+          const cap = document.createElement("figcaption");
+          cap.textContent = worlds[i].label;
+          cap.style.cssText = "text-align:center;font-size:.85em;opacity:.8";
+          fig.appendChild(cap);
+        }
       });
     }, (e) => {
       box.textContent = `The robot worlds could not be drawn: ${e.message}`;

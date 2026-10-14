@@ -143,3 +143,18 @@ test("worlds are parsed by the library and bad maps are reported", async ({ page
   expect(parsed[1].ok).toBe(false);
   expect(parsed[1].error).toContain("movement");
 });
+
+test("the map never grows past its height cap, and the HUD holds only the bag", async ({ page }) => {
+  await open(page);
+  const big = 'format = "tlfrobot-world/1"\nid = "big"\n[rules]\nmovement = "relative"\ntools = ["crystals"]\n'
+    + '[board]\nsize = [50, 50]\n[robot]\nat = [0, 0]\nheading = "east"\nbag = 0\n';
+  await page.evaluate((map) => lab.load([{ label: "big", map }]), big);
+  const box = await page.evaluate(() => lab.scene.svg.getBoundingClientRect().toJSON());
+  expect(box.height).toBeLessThanOrEqual(561);
+  await page.evaluate(() => { document.getElementById("scene").style.setProperty("--tlfrobot-max-height", "300px"); });
+  expect(await page.evaluate(() => lab.scene.svg.getBoundingClientRect().height)).toBeLessThanOrEqual(301);
+  await page.evaluate(() => lab.setSpeed(Infinity));
+  await run(page, "from tlfrobot import *\nmove()\nfront_clear()\n");
+  const texts = await page.evaluate(() => [...lab.scene.svg.querySelectorAll("text")].map((t) => t.textContent).filter((t) => t && t.includes("(")));
+  expect(texts).toEqual([]);
+});
