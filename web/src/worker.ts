@@ -16,6 +16,7 @@
  *                 {type:'done', runId, result}
  */
 import { MB, STATUS } from "./types";
+import { loadRobotWheel } from "./load-wheel";
 
 declare const __TLFROBOT_VERSION__: string;
 const VERSION = __TLFROBOT_VERSION__;
@@ -96,7 +97,7 @@ async function init(msg: any): Promise<void> {
   interrupt = typeof SharedArrayBuffer === "function" && msg.interrupt instanceof SharedArrayBuffer ? new Int32Array(msg.interrupt) : null;
   const { boot } = await import(/* @vite-ignore */ BOOT_URL);
   pyodide = await boot({ interrupt });
-  await pyodide.loadPackage(WHEEL_URL);
+  await loadRobotWheel(pyodide, WHEEL_URL);
   pyodide.setStdout({ write: (buf: Uint8Array) => { out += decoder.decode(buf, { stream: true }); return buf.length; } });
   pyodide.setStderr({ write: (buf: Uint8Array) => { out += decoder.decode(buf, { stream: true }); return buf.length; } });
   pyodide.setStdin({ stdin: () => null });
