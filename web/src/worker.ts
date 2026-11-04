@@ -34,15 +34,37 @@ def _perform(request):
     return js.tlfrobotPerform(json.dumps(request))
 
 
+def goal_preview(start, goal):
+    # When several final positions or layouts are allowed, one picture could
+    # imply the checker requires it. Only depict a well-defined endpoint.
+    if goal is None or goal.robot_at is None:
+        return None
+    if goal.crystals_mode == "specified" or goal.paint_mode == "contains":
+        return None
+    robot = dict(start["robot"], at=list(goal.robot_at))
+    if goal.robot_heading is not None:
+        robot["heading"] = goal.robot_heading
+    if goal.has_bag:
+        robot["bag"] = goal.bag
+    cells = dict(start["cells"])
+    if goal.crystals_mode == "exact":
+        cells["crystals"] = [{"at": list(c), "count": n} for c, n in maps.sorted_cells(goal.crystals)]
+    if goal.paint_mode == "exact":
+        cells["painted"] = [list(c) for c in sorted(goal.paint, key=lambda c: (c[1], c[0]))]
+    return {"robot": robot, "cells": cells, "bagSpecified": goal.has_bag,
+            "crystalsSpecified": goal.crystals_mode is not None,
+            "paintSpecified": goal.paint_mode is not None, "headingSpecified": goal.robot_heading is not None}
+
+
 def parse(map_texts, goal_texts):
     out = []
     for text, goal in zip(map_texts, goal_texts):
         try:
             world = maps.loads_world(text, path="world")
-            if goal:
-                maps.loads_goal(goal, world, path="goal")
-            out.append({"ok": True, "world": world.normalised(),
-                        "hasGoal": bool(goal) or world.goal is not None})
+            target = maps.loads_goal(goal, world, path="goal") if goal else world.goal
+            start = world.normalised()
+            out.append({"ok": True, "world": start, "hasGoal": target is not None,
+                        "preview": goal_preview(start, target)})
         except MapError as e:
             out.append({"ok": False, "error": e.message})
     return json.dumps(out)
@@ -116,7 +138,15 @@ self.onmessage = async (event: MessageEvent) => {
       const parse = pyodide.globals.get("parse");
       const json = parse(msg.maps, msg.goals);
       parse.destroy();
-      postMessage({ type: "parsed", id: msg.id, results: JSON.parse(json) });
+      const results = JSON.parse(json);
+      for (const item of results) {
+        if (item.preview) {
+          // Share floor, walls and markers between views, including large boards.
+          const { robot, cells, ...specified } = item.preview;
+          item.preview = { world: { ...item.world, robot, cells }, ...specified };
+        }
+      }
+      postMessage({ type: "parsed", id: msg.id, results });
     } else if (msg.type === "run") {
       currentRun = msg.runId;
       out = "";

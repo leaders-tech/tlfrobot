@@ -158,3 +158,40 @@ test("the map never grows past its height cap, and the HUD holds only the bag", 
   const texts = await page.evaluate(() => [...lab.scene.svg.querySelectorAll("text")].map((t) => t.textContent).filter((t) => t && t.includes("(")));
   expect(texts).toEqual([]);
 });
+
+test("each statement world shows its own goal and leaves the editor's starts intact", async ({page}) => {
+  await open(page);
+  const map = 'format = "tlfrobot-world/1"\nid = "pair"\n[rules]\nmovement = "absolute"\ntools = ["crystals"]\n'
+    + '[board]\nsize = [3, 3]\n[robot]\nat = [0, 0]\nbag = 1\n';
+  const goal = 'format = "tlfrobot-goal/1"\n[goal]\nrobot_at = [2, 1]\nbag = 0\n'
+    + '[goal.crystals]\nmode = "exact"\ncells = [{at = [2, 1], count = 1}]\n';
+  await page.evaluate(({map, goal}) => {
+    const statement = document.createElement("tlfrobot-worlds");
+    statement.lang = "ru";
+    for (const label of ["Первый", "Второй"]) {
+      for (const [kind, text] of [["map",map],["goal",goal]]) {
+        const node = document.createElement("script");
+        node.type = "text/plain";
+        node.dataset.kind = kind;
+        node.dataset.label = label;
+        node.textContent = text;
+        statement.append(node);
+      }
+    }
+    document.body.append(statement);
+  }, {map, goal});
+  const first = page.getByRole("group",{name:"Первый"}), second = page.getByRole("group",{name:"Второй"});
+  await expect(first.getByRole("radio",{name:"До"})).toBeChecked();
+  await first.getByRole("radio",{name:"После"}).check();
+  await expect(first.locator("figcaption")).toContainText("столбец 3, ряд снизу 2");
+  await expect(first.locator("figcaption")).toContainText("В сумке: 0");
+  await expect(first.locator("figcaption")).toContainText("Под Карелом: 1");
+  await expect(second.getByRole("radio",{name:"До"})).toBeChecked();
+  await first.getByRole("radio",{name:"После"}).press("ArrowLeft");
+  await expect(first.getByRole("radio",{name:"До"})).toBeChecked();
+  await expect(first.locator("figcaption")).toContainText("В сумке: 1");
+  expect(await page.evaluate(async () => {
+    const {readWorlds} = await import("/s/tlfrobot/tlfrobot-web.js");
+    return readWorlds(document.querySelector('tlfrobot-worlds[lang="ru"]')).map(w => [w.map,w.goal]);
+  })).toEqual([[map,goal],[map,goal]]);
+});

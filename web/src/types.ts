@@ -35,7 +35,14 @@ export type RunResult = {
   verdict: Verdict | null;
 };
 
-export type ParsedWorld = { ok: true; world: World; hasGoal: boolean } | { ok: false; error: string };
+export type GoalPreview = {
+  world: World;
+  bagSpecified: boolean;
+  crystalsSpecified: boolean;
+  paintSpecified: boolean;
+  headingSpecified: boolean;
+};
+export type ParsedWorld = { ok: true; world: World; hasGoal: boolean; preview?: GoalPreview | null } | { ok: false; error: string };
 
 /** Shared mailbox (Int32 slots). The worker blocks on it inside a robot call. */
 export const MB = { SEQ: 0, STATUS: 1, RUN: 2, CANCEL: 3, LENGTH: 4 } as const;
