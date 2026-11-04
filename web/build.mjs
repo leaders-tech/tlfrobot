@@ -17,7 +17,7 @@ writeFileSync(join(web, "catalog.json"), catalog);
 
 const common = {
   bundle: true, format: "esm", target: "es2022", minify: !process.argv.includes("--dev"), sourcemap: true,
-  loader: { ".svg": "text" }, define: { __TLFROBOT_VERSION__: JSON.stringify(version) }, logLevel: "info",
+  loader: { ".svg": "text", ".css": "text" }, define: { __TLFROBOT_VERSION__: JSON.stringify(version) }, logLevel: "info",
 };
 await build({ ...common, entryPoints: [join(web, "src/index.ts")], outfile: join(web, "dist/tlfrobot-web.js") });
 await build({ ...common, entryPoints: [join(web, "src/worker.ts")], outfile: join(web, "dist/worker.js") });

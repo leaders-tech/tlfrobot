@@ -178,11 +178,15 @@ test("each statement world shows its own goal and leaves the editor's starts int
         statement.append(node);
       }
     }
-    document.body.append(statement);
+    const problem = document.createElement("section");
+    problem.id = "prob_test_comparison";
+    problem.append(statement);
+    document.body.append(problem);
   }, {map, goal});
   const first = page.getByRole("group",{name:"Первый"}), second = page.getByRole("group",{name:"Второй"});
   await expect(first.getByRole("radio",{name:"До"})).toBeChecked();
   await first.getByRole("radio",{name:"После"}).check();
+  await expect(first.getByText("После", {exact:true})).toHaveCSS("background-color", "rgb(37, 86, 90)");
   await expect(first.locator("figcaption")).toContainText("столбец 3, ряд снизу 2");
   await expect(first.locator("figcaption")).toContainText("В сумке: 0");
   await expect(first.locator("figcaption")).toContainText("Под Карелом: 1");
@@ -194,4 +198,17 @@ test("each statement world shows its own goal and leaves the editor's starts int
     const {readWorlds} = await import("/s/tlfrobot/tlfrobot-web.js");
     return readWorlds(document.querySelector('tlfrobot-worlds[lang="ru"]')).map(w => [w.map,w.goal]);
   })).toEqual([[map,goal],[map,goal]]);
+
+  // The portal rebuilds the enclosing problem when a reader switches language.
+  await first.getByRole("radio",{name:"После"}).check();
+  await page.evaluate(() => {
+    const old = document.querySelector("#prob_test_comparison tlfrobot-worlds");
+    const next = document.createElement("tlfrobot-worlds");
+    next.lang = "en";
+    next.append(...[...old.querySelectorAll("script")].map(s => s.cloneNode(true)));
+    old.replaceWith(next);
+  });
+  await expect(first.getByRole("radio",{name:"After"})).toBeChecked();
+  await expect(first.locator("figcaption")).toContainText("In the bag: 0");
+  await expect(second.getByRole("radio",{name:"Before"})).toBeChecked();
 });

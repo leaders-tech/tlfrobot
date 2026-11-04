@@ -11,6 +11,7 @@
 import { host, type LabWorld } from "./lab";
 import { Scene } from "./scene";
 import type { GoalPreview, World } from "./types";
+import worldStyles from "./worlds.css";
 
 export function readWorlds(root: Element): LabWorld[] {
   const worlds: LabWorld[] = [];
@@ -107,39 +108,50 @@ function showState(scene: Scene, caption: HTMLElement, world: World, lang: Langu
 }
 
 let groupNumber = 0;
-function comparison(label: string, start: World, goal: GoalPreview, lang: Language): HTMLElement {
+// A language switch can replace the entire statement. Remember each selected
+// goal by problem and world, without keeping any student data across reloads.
+const selectedGoals = new Set<string>();
+
+function comparison(label: string, start: World, goal: GoalPreview, lang: Language, key?: string): HTMLElement {
   const group = document.createElement("fieldset");
-  group.style.cssText = "box-sizing:border-box;flex:1 1 13rem;min-width:0;max-width:22rem;margin:0;padding:.45rem .65rem .6rem;border:1px solid #bdcccf;border-radius:.5rem;text-align:center";
+  group.className = "tlfrobot-comparison";
   const legend = document.createElement("legend");
-  legend.style.cssText = "padding:0 .3em;font-weight:600";
   legend.textContent = label;
-  group.append(legend);
+  const options = document.createElement("div");
+  options.className = "tlfrobot-view-options";
+  group.append(legend, options);
   const name = `tlfrobot-state-${++groupNumber}`;
   const image = document.createElement("figure");
-  image.style.cssText = "margin:.5em 0 0";
   const board = document.createElement("div");
   image.append(board);
   const scene = new Scene(board, { hud: false });
   const caption = document.createElement("figcaption");
-  caption.style.cssText = "white-space:pre-line;font-size:.85em;line-height:1.4;margin-top:.35rem";
   caption.setAttribute("aria-live", "polite");
   image.append(caption);
+  const render = (after: boolean) => showState(scene, caption, after ? goal.world : start, lang, after ? goal : undefined);
+  const after = key !== undefined && selectedGoals.has(key);
   for (const state of ["before", "after"] as const) {
     const choice = document.createElement("label");
-    choice.style.cssText = "display:inline-flex;align-items:center;gap:.3em;padding:.2em .45em;cursor:pointer";
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = name;
     radio.value = state;
-    radio.checked = radio.defaultChecked = state === "before";
+    radio.checked = radio.defaultChecked = (state === "after") === after;
     radio.addEventListener("change", () => {
-      if (radio.checked) showState(scene, caption, state === "after" ? goal.world : start, lang, state === "after" ? goal : undefined);
+      if (!radio.checked) return;
+      if (key !== undefined) {
+        if (state === "after") selectedGoals.add(key);
+        else selectedGoals.delete(key);
+      }
+      render(state === "after");
     });
-    choice.append(radio, words[lang][state]);
-    group.append(choice);
+    const text = document.createElement("span");
+    text.textContent = words[lang][state];
+    choice.append(radio, text);
+    options.append(choice);
   }
   group.append(image);
-  showState(scene, caption, start, lang);
+  render(after);
   return group;
 }
 
@@ -181,14 +193,22 @@ export class TlfrobotWorlds extends HTMLElement {
   private render(worlds: LabWorld[]): void {
     const lang = statementLanguage(this, worlds);
     const box = document.createElement("div");
+    if (!this.ownerDocument.getElementById("tlfrobot-worlds-style")) {
+      const style = this.ownerDocument.createElement("style");
+      style.id = "tlfrobot-worlds-style";
+      style.textContent = worldStyles;
+      this.ownerDocument.head.append(style);
+    }
     box.className = "tlfrobot-worlds";
-    box.style.cssText = "display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start";
+    const problem = this.closest('[id^="prob_"]')?.id ??
+      this.closest("section.problem")?.querySelector("[data-problem]")?.getAttribute("data-problem");
     this.appendChild(box);
     host().parse(worlds.map((w) => w.map), worlds.map((w) => w.goal ?? null)).then((parsed) => {
       parsed.forEach((p, i) => {
         const label = worlds[i].label === `World ${i + 1}` ? `${words[lang].world} ${i + 1}` : worlds[i].label;
         if (p.ok && p.preview) {
-          box.append(comparison(label, p.world, p.preview, lang));
+          const key = problem ? JSON.stringify([location.pathname, problem, p.world.id, i]) : undefined;
+          box.append(comparison(label, p.world, p.preview, lang, key));
           return;
         }
         const fig = document.createElement("figure");
